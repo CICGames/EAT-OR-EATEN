@@ -1,0 +1,19 @@
+Sync fail 해결방법
+
+Github Windows - Tools and Options - Open in Git Shell
+
+git push
+
+if(error:faild to push ...){
+	git stash;
+else
+	end;
+
+
+git stash
+
+Github windows에서 Snyc 클릭
+
+git stash pop
+
+Github windows에서 Snyc 클릭
