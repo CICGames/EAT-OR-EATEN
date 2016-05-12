@@ -19,11 +19,7 @@ ExportedObj/
 *.svd
 
 
-Library/AssetServerCacheV3
-Library/FailedAssetImports.txt
-Library/cache
-Library/metadata
-Temp
+
 
 
 # Unity3D generated meta files
