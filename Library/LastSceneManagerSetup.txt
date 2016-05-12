@@ -1,4 +1,0 @@
-sceneSetups:
-- path: C:/Users/Kim/Documents/GitHub/Project_1/YD_Project_1/Assets/Scene/field_desert_1.unity
-  isLoaded: 1
-  isActive: 1
