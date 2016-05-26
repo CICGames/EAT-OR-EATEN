@@ -3,15 +3,17 @@ using System.Collections;
 using UnityEngine.Networking;
 
 public class PlayerController : NetworkBehaviour {
-    float speed;
-    private Rigidbody rb;
-    MeshCollider meshcollider;
+    
+    public float moveSpeed;
 
+    [SerializeField] private Rigidbody myRigidbody;
+    [SerializeField] MeshCollider meshcollider;
+    
     // Use this for initialization
     void Start() {
-        rb = GetComponent<Rigidbody>();
-        meshcollider = GetComponent<MeshCollider>();
-        speed = 500f;
+        if (isLocalPlayer) {
+            GameObject.Find("Local Camera").GetComponent<CameraController>().SetPlayer(transform);
+        }
     }
 
     // Update is called once per frame
@@ -22,13 +24,13 @@ public class PlayerController : NetworkBehaviour {
         }
 
         if (Input.GetKey(KeyCode.W))
-            rb.AddForce(Vector3.forward * Time.deltaTime * speed);
+            myRigidbody.AddForce(Vector3.forward * Time.deltaTime * moveSpeed);
         if (Input.GetKey(KeyCode.S))
-            rb.AddForce(-Vector3.forward * Time.deltaTime * speed);
+            myRigidbody.AddForce(-Vector3.forward * Time.deltaTime * moveSpeed);
         if (Input.GetKey(KeyCode.A))
-            rb.AddForce(-Vector3.right * Time.deltaTime * speed);
+            myRigidbody.AddForce(-Vector3.right * Time.deltaTime * moveSpeed);
         if (Input.GetKey(KeyCode.D))
-            rb.AddForce(Vector3.right * Time.deltaTime * speed);
-
+            myRigidbody.AddForce(Vector3.right * Time.deltaTime * moveSpeed);
     }
+
 }
