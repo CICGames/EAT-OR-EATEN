@@ -1,39 +1,73 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.Networking;
+using System;
 
 public class PlayerSyncPosition : NetworkBehaviour {
 
     [SyncVar]
-    private Vector3 syncPos;
+    private Vector3 syncVelocity;
+    [SyncVar]
+    private Vector3 syncPosition;
 
     [SerializeField]
-    Transform myTransform;
+    Rigidbody myRigidbody;
+    //Transform myTransfrom;
 
-    [SerializeField]
-    float lerpRate = 15;
+    //[SyncVar]
+    //private Vector3 syncPos;
+
+    //[SerializeField]
+    //Transform myTransform;
+
+    //[SerializeField]
+    //float lerpRate = 15;
 
     void FixedUpdate() {
-        TransmitPosition();
-        LerpPosition();
+        TransMoveInformation();
+        LerpMove();
+        //TransmitPosition();
+        //LerpPosition();
     }
 
-    void LerpPosition() {
+    private void LerpMove() {
         if (!isLocalPlayer) {
-            myTransform.position = Vector3.Lerp(myTransform.position, syncPos, Time.deltaTime * lerpRate);
+            myRigidbody.position = syncPosition;
+            myRigidbody.AddForce(syncVelocity);
         }
+
+        //Debug.Log("Sync: " + syncPosition + ", " + syncVelocity);
     }
 
     [Command]
-    void CmdProvidePostionToServer(Vector3 pos) {
-        syncPos = pos;
+    void CmdProvidePostionToServer(Vector3 pos, Vector3 veo) {
+        syncPosition = pos;
+        syncVelocity = veo;
+
     }
 
     [ClientCallback]
-    void TransmitPosition() {
+    private void TransMoveInformation() {
         if (isLocalPlayer) {
-            CmdProvidePostionToServer(myTransform.position);
+            CmdProvidePostionToServer(myRigidbody.position, myRigidbody.velocity);
         }
     }
 
+    //void LerpPosition() {
+    //    if (!isLocalPlayer) {
+    //        myTransform.position = Vector3.Lerp(myTransform.position, syncPos, Time.deltaTime * lerpRate);
+    //    }
+    //}
+
+    //[Command]
+    //void CmdProvidePostionToServer(Vector3 pos) {
+    //    syncPos = pos;
+    //}
+
+    //[ClientCallback]
+    //void TransmitPosition() {
+    //    if (isLocalPlayer) {
+    //        CmdProvidePostionToServer(myTransform.position);
+    //    }
+    //}
 }

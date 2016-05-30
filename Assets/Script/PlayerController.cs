@@ -3,7 +3,8 @@ using System.Collections;
 using UnityEngine.Networking;
 
 public class PlayerController : NetworkBehaviour {
-    
+
+    public GameObject playerCamera;
     public float moveSpeed;
 
     [SerializeField] private Rigidbody myRigidbody;
@@ -12,7 +13,8 @@ public class PlayerController : NetworkBehaviour {
     // Use this for initialization
     void Start() {
         if (isLocalPlayer) {
-            GameObject.Find("Local Camera").GetComponent<CameraController>().SetPlayer(transform);
+            playerCamera = Instantiate<GameObject>(playerCamera);
+            playerCamera.GetComponent<CameraController>().SetPlayer(transform);
         }
     }
 
