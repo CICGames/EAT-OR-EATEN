@@ -20,8 +20,8 @@ public class PlayerSyncPosition : NetworkBehaviour {
     //[SerializeField]
     //Transform myTransform;
 
-    //[SerializeField]
-    //float lerpRate = 15;
+    [SerializeField]
+    float lerpRate = 15;
 
     void FixedUpdate() {
         TransMoveInformation();
@@ -32,8 +32,9 @@ public class PlayerSyncPosition : NetworkBehaviour {
 
     private void LerpMove() {
         if (!isLocalPlayer) {
-            myRigidbody.position = syncPosition;
+            myRigidbody.position = Vector3.Lerp(myRigidbody.position, syncPosition, Time.deltaTime * lerpRate);
             myRigidbody.AddForce(syncVelocity);
+            syncVelocity = Vector3.zero;
         }
 
         //Debug.Log("Sync: " + syncPosition + ", " + syncVelocity);
