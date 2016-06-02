@@ -5,70 +5,36 @@ using System;
 
 public class PlayerSyncPosition : NetworkBehaviour {
 
-    [SyncVar]
-    private Vector3 syncVelocity;
-    [SyncVar]
-    private Vector3 syncPosition;
+    [SyncVar] private Vector3 syncPosition = Vector3.zero;
+    [SyncVar] private Quaternion syncRatation = Quaternion.identity;
 
-    [SerializeField]
-    Rigidbody myRigidbody;
-    //Transform myTransfrom;
-
-    //[SyncVar]
-    //private Vector3 syncPos;
-
-    //[SerializeField]
-    //Transform myTransform;
-
-    [SerializeField]
-    float lerpRate = 15;
+    [SerializeField] Rigidbody myRigidbody;
+    [SerializeField] Transform myTransfrom;
+  
+    [SerializeField] float lerpRate = 15;
 
     void FixedUpdate() {
         TransMoveInformation();
         LerpMove();
-        //TransmitPosition();
-        //LerpPosition();
     }
 
     private void LerpMove() {
-        if (!isLocalPlayer) {
-            myRigidbody.position = Vector3.Lerp(myRigidbody.position, syncPosition, Time.deltaTime * lerpRate);
-            myRigidbody.AddForce(syncVelocity);
-            syncVelocity = Vector3.zero;
+        if (!isLocalPlayer) { // 플레이어 자신이 아닌 다른 플레이어들 움직임
+            myTransfrom.position = Vector3.Lerp(myRigidbody.position, syncPosition, Time.deltaTime * lerpRate);
+            myTransfrom.rotation = Quaternion.Lerp(transform.rotation, syncRatation, Time.deltaTime * lerpRate);
         }
-
-        //Debug.Log("Sync: " + syncPosition + ", " + syncVelocity);
     }
 
-    [Command]
-    void CmdProvidePostionToServer(Vector3 pos, Vector3 veo) {
+    [Command] // 클라이언트에서 서버로 전송? 적용?
+    void CmdProvidePostionToServer(Vector3 pos, Quaternion rot) {
         syncPosition = pos;
-        syncVelocity = veo;
-
+        syncRatation = rot;
     }
 
-    [ClientCallback]
+    [ClientCallback] // 클라이언트에서만 동장
     private void TransMoveInformation() {
         if (isLocalPlayer) {
-            CmdProvidePostionToServer(myRigidbody.position, myRigidbody.velocity);
+            CmdProvidePostionToServer(myTransfrom.position, myTransfrom.rotation);
         }
     }
-
-    //void LerpPosition() {
-    //    if (!isLocalPlayer) {
-    //        myTransform.position = Vector3.Lerp(myTransform.position, syncPos, Time.deltaTime * lerpRate);
-    //    }
-    //}
-
-    //[Command]
-    //void CmdProvidePostionToServer(Vector3 pos) {
-    //    syncPos = pos;
-    //}
-
-    //[ClientCallback]
-    //void TransmitPosition() {
-    //    if (isLocalPlayer) {
-    //        CmdProvidePostionToServer(myTransform.position);
-    //    }
-    //}
 }
