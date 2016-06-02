@@ -25,15 +25,12 @@ public class PlayerCollision : MonoBehaviour {
                     var distance = Vector3.Distance(transform.position, feed[i].transform.position); //위치 구하기.
                     if (distance < 0.1) {
                         feed[i].SetActive(false);
-                        float size = (float)(transform.localScale.x + 0.01);
+                        float size = (float)(transform.localScale.x + (feed[i].transform.lossyScale.x / 10));
                         transform.localScale = new Vector3(size, size, size);
                         GameObject tmp = feed[i];
                         feed.Remove(feed[i]);
                         Destroy(tmp);
                     }
-                } else {
-                    Debug.Log("count : " + feed.Count);
-                    Debug.Log("i : " + i);
                 }
             }
         }

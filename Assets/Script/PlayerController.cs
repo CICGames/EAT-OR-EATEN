@@ -5,7 +5,7 @@ using UnityEngine.Networking;
 public class PlayerController : NetworkBehaviour {
 
     public GameObject playerCamera;
-    public float moveSpeed;
+    public float defaultMoveSpeed;
 
     [SerializeField] private Rigidbody myRigidbody;
     [SerializeField] MeshCollider meshcollider;
@@ -15,15 +15,23 @@ public class PlayerController : NetworkBehaviour {
         if (isLocalPlayer) {
             playerCamera = Instantiate<GameObject>(playerCamera);
             playerCamera.GetComponent<CameraController>().SetPlayer(transform);
+            playerCamera.GetComponent<AudioListener>().enabled = true;
+        }
+    }
+
+    void OnDestroy() {
+        if (isLocalPlayer) {
+            Destroy(playerCamera);
         }
     }
 
     // Update is called once per frame
     void Update() {
-
         if (!isLocalPlayer) {
             return;
         }
+
+        float moveSpeed = defaultMoveSpeed;
 
         if (Input.GetKey(KeyCode.W))
             myRigidbody.AddForce(Vector3.forward * Time.deltaTime * moveSpeed);
