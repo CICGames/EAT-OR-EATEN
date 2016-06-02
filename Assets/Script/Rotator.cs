@@ -15,9 +15,12 @@ public class Rotator : MonoBehaviour {
     }
 
     void OnTriggerEnter(Collider other) {
-        if (!other.CompareTag("Pickup1")) {
-            rb.useGravity = false;
-            rb.isKinematic = true;
+        if (other.GetType() == typeof(TerrainCollider)) {
+            if (!other.CompareTag("Pickup1")) {
+                (gameObject.GetComponent(typeof(SphereCollider)) as Collider).enabled = false;
+                rb.useGravity = false;
+                rb.isKinematic = true;
+            }
         }
     }
 }
