@@ -5,10 +5,11 @@ public class PickupSpawner : NetworkBehaviour {
     public GameObject pickupPrefab;
     public int NumberOfPickup1;
     public Terrain terrain;
+    public GameObject parent;
 
     float x_range;
     float z_range;
-    
+
     GameObject[] n_pickup1;
 
     // Use this for initialization
@@ -20,7 +21,9 @@ public class PickupSpawner : NetworkBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        CreatePickup();
+        if (NetworkServer.active) { 
+            CreatePickup();
+        }
     }
 
     void CreatePickup() {
@@ -29,7 +32,8 @@ public class PickupSpawner : NetworkBehaviour {
 
         if (n_pickup1.Length < NumberOfPickup1) {
             Vector3 spawnPosition = new Vector3(Random.Range(1, x_range), 10, Random.Range(1, z_range));
-            GameObject pickup = (GameObject)Instantiate(pickupPrefab, spawnPosition, Quaternion.identity); 
+            GameObject pickup = (GameObject)Instantiate(pickupPrefab, spawnPosition, Quaternion.identity);
+            pickup.transform.parent = parent.transform;
             NetworkServer.Spawn(pickup);// generate pickup at random position
         }
     }
