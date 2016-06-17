@@ -3,34 +3,34 @@ using System.Collections;
 
 public class CameraController : MonoBehaviour {
 
-    public float defaultForwardDistance;
-    public float defaultHeightDistance;
+    public float _defaultForwardDistance;
+    public float _defaultHeightDistance;
 
-    private Transform localPlayer = null;
-    private Vector3 defaultPlayerScale;
+    private Transform _localPlayer = null;
+    private Vector3 _defaultPlayerScale;
 
     private const float DISTANCE_RATE = 4.3f;
 
     void Update() {
-        if (localPlayer != null){
+        if (_localPlayer != null){
             FollowPlayer();
         }
     }
 
     public void SetPlayer(Transform player) {
-        localPlayer = player;
-        defaultPlayerScale = localPlayer.localScale;
+        _localPlayer = player;
+        _defaultPlayerScale = _localPlayer.localScale;
     }
 
 
     private void FollowPlayer() {
-        Vector3 localPlayerPosition = localPlayer.position;
-        float increaseRate = (localPlayer.localScale.x - defaultPlayerScale.x) * DISTANCE_RATE;
-        float forwardDistance = defaultForwardDistance + increaseRate;
-        float heightDistance = defaultHeightDistance + increaseRate;
+        Vector3 _localPlayerPosition = _localPlayer.position;
+        float _increaseRate = (_localPlayer.localScale.x - _defaultPlayerScale.x) * DISTANCE_RATE;
+        float _forwardDistance = _defaultForwardDistance + _increaseRate;
+        float _heightDistance = _defaultHeightDistance + _increaseRate;
         
-        transform.position = new Vector3(localPlayerPosition.x, localPlayerPosition.y + heightDistance, localPlayerPosition.z - forwardDistance);
-        transform.LookAt(localPlayer);
+        transform.position = new Vector3(_localPlayerPosition.x, _localPlayerPosition.y + _heightDistance, _localPlayerPosition.z - _forwardDistance);
+        transform.LookAt(_localPlayer);
     }
     
 }

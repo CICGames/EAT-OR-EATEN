@@ -3,13 +3,13 @@ using System.Collections;
 
 public class SphereRotator : MonoBehaviour {
 
-    int speed;
+    int _speed;
 
-    Vector3 direction;
+    Vector3 _direction;
 
 
     void Start() {
-        speed = Random.Range(100, 180);
+        _speed = Random.Range(100, 180);
         float angle = Vector3.Angle(new Vector3(1, 0, 0), transform.position);
         if (transform.localPosition.y < 0) { 
             angle *= -1;
@@ -18,11 +18,11 @@ public class SphereRotator : MonoBehaviour {
             angle *= -1;
         }
         Debug.Log(angle);
-        direction = new Vector3(angle*2, 360, 0);
+        _direction = new Vector3(angle*2, 360, 0);
     }
 
 
     void Update() {
-        transform.RotateAround(transform.parent.position, direction, speed *Time.deltaTime);
+        transform.RotateAround(transform.parent.position, _direction, _speed *Time.deltaTime);
     }
 }

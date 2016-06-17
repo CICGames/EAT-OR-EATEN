@@ -5,13 +5,13 @@ using System;
 
 public class PlayerSyncPosition : NetworkBehaviour {
 
-    [SyncVar] private Vector3 syncPosition = Vector3.zero;
-    [SyncVar] private Quaternion syncRatation = Quaternion.identity;
-    [SyncVar] private Vector3 syncScale = Vector3.zero;
+    [SyncVar] private Vector3 _syncPosition = Vector3.zero;
+    [SyncVar] private Quaternion _syncRatation = Quaternion.identity;
+    [SyncVar] private Vector3 _syncScale = Vector3.zero;
     
-    [SerializeField] Transform myTransfrom;
+    [SerializeField] Transform _myTransfrom;
   
-    [SerializeField] float lerpRate = 15;
+    [SerializeField] float _lerpRate = 15;
 
     void FixedUpdate() {
         TransMoveInformation();
@@ -20,23 +20,23 @@ public class PlayerSyncPosition : NetworkBehaviour {
 
     private void LerpMove() {
         if (!isLocalPlayer) { // 플레이어 자신이 아닌 다른 플레이어들 움직임
-            myTransfrom.position = Vector3.Lerp(transform.position, syncPosition, Time.deltaTime * lerpRate);
-            myTransfrom.rotation = Quaternion.Lerp(transform.rotation, syncRatation, Time.deltaTime * lerpRate);
-            myTransfrom.localScale = Vector3.Lerp(transform.localScale, syncScale, Time.deltaTime * lerpRate);
+            _myTransfrom.position = Vector3.Lerp(transform.position, _syncPosition, Time.deltaTime * _lerpRate);
+            _myTransfrom.rotation = Quaternion.Lerp(transform.rotation, _syncRatation, Time.deltaTime * _lerpRate);
+            _myTransfrom.localScale = Vector3.Lerp(transform.localScale, _syncScale, Time.deltaTime * _lerpRate);
         }
     }
 
     [Command] // 클라이언트에서 서버로 전송? 적용?
-    void CmdProvidePostionToServer(Vector3 pos, Quaternion rot, Vector3 scale) {
-        syncPosition = pos;
-        syncRatation = rot;
-        syncScale = scale;
+    void CmdProvidePostionToServer(Vector3 _pos, Quaternion _rot, Vector3 _scale) {
+        _syncPosition = _pos;
+        _syncRatation = _rot;
+        _syncScale = _scale;
     }
 
     [ClientCallback] // 클라이언트에서만 동장
     private void TransMoveInformation() {
         if (isLocalPlayer) {
-            CmdProvidePostionToServer(myTransfrom.position, myTransfrom.rotation, myTransfrom.localScale);
+            CmdProvidePostionToServer(_myTransfrom.position, _myTransfrom.rotation, _myTransfrom.localScale);
         }
     }
 }

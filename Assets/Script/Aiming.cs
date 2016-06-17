@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Aiming : MonoBehaviour {
 
-    float lookFactor = 0.8f;
+    float _lookFactor = 0.8f;
 
     // Use this for initialization
     void Start () {

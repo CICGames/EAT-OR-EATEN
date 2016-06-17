@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class DefaultAttact_Level1 : MonoBehaviour {
+public class SkillDefaultLevel1 : MonoBehaviour {
 
     public float moveSpeed = 5f;
     private Vector3 attackPoint;
