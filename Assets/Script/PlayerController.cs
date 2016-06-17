@@ -73,7 +73,7 @@ public class PlayerController : NetworkBehaviour {
 
     public void Attack(Vector3 attackPoint) {
         GameObject at = Instantiate<GameObject>(defaultAttack);
-        at.GetComponent<TestAttact>().SetAttackPoint(transform.position, attackPoint);
+        at.GetComponent<DefaultAttact_Level1>().SetAttackPoint(transform.position, attackPoint);
         
     }
 }
