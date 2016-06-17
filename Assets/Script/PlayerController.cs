@@ -9,6 +9,7 @@ public class PlayerController : NetworkBehaviour {
     public GameObject playerCamera;
     public GameObject defaultAttack;
     public float defaultMoveSpeed;
+    GameObject g;
 
     [SerializeField] private Rigidbody myRigidbody;
     [SerializeField] MeshCollider meshcollider;
@@ -19,6 +20,8 @@ public class PlayerController : NetworkBehaviour {
             playerCamera = Instantiate<GameObject>(playerCamera);
             playerCamera.GetComponent<CameraController>().SetPlayer(transform);
             playerCamera.GetComponent<AudioListener>().enabled = true;
+
+            g = transform.GetChild(0).GetChild(0).gameObject;
         }
     }
 
@@ -56,7 +59,15 @@ public class PlayerController : NetworkBehaviour {
             //mouseWorld.z += mouseWorld.y;
             //mouseWorld.y = 0;
             Debug.Log("Player: " + transform.position + ", Mouse: " + mouseWorld + "Input: " + Input.mousePosition);
+
+            DefaultAttactEffect.test = true;
+
+            g.transform.LookAt(mouseWorld);
             Attack(mouseWorld);
+        }
+        if (Input.GetMouseButtonDown(1)) {
+            DefaultAttactEffect.test = false;
+            ;
         }
     }
 
