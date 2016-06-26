@@ -29,7 +29,7 @@ public class CameraController : MonoBehaviour {
         float _forwardDistance = _defaultForwardDistance + _increaseRate;
         float _heightDistance = _defaultHeightDistance + _increaseRate;
         
-        transform.position = new Vector3(_localPlayerPosition.x, _localPlayerPosition.y + _heightDistance, _localPlayerPosition.z - _forwardDistance);
+        transform.position = new Vector3(_localPlayerPosition.x, _localPlayerPosition.y + _heightDistance, _localPlayerPosition.z);
         transform.LookAt(_localPlayer);
     }
     
