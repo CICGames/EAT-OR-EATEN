@@ -25,7 +25,7 @@ public class PlayerCollision : MonoBehaviour {
                     var _distance = Vector3.Distance(transform.position, _feeds[i].transform.position); //위치 구하기.
                     if (_distance < 0.1) {
                         _feeds[i].SetActive(false);
-                        float _size = (float)(transform.localScale.x + (_feeds[i].transform.lossyScale.x / 10));
+                        float _size = (float)(transform.localScale.x + (_feeds[i].transform.lossyScale.x * GlobalData.EXPEND_RATE));
                         transform.localScale = new Vector3(_size, _size, _size);
                         GameObject _tmp = _feeds[i];
                         _feeds.Remove(_feeds[i]);
@@ -38,6 +38,7 @@ public class PlayerCollision : MonoBehaviour {
 
     void OnTriggerEnter(Collider _other) {
         if (_other.gameObject.CompareTag("Feed_Square")) {
+            (_other.GetComponent(typeof(SphereCollider)) as Collider).enabled = false; //Disable ShpereCollider
             _other.transform.parent = transform;
             _feeds.Add(_other.gameObject);
         }

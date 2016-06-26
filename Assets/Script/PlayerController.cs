@@ -4,7 +4,7 @@ using UnityEngine.Networking;
 using UnityEngine.EventSystems;
 using System;
 
-public class PlayerController : NetworkBehaviour {
+public class PlayerController : Character{
 
     public GameObject _playerCamera;
     public GameObject _defaultAttack;
@@ -49,23 +49,15 @@ public class PlayerController : NetworkBehaviour {
             _myRigidbody.AddForce(Vector3.right * Time.deltaTime * moveSpeed);
 
         if (Input.GetMouseButtonDown(0)) {
-            Vector3 _cc = Input.mousePosition;
-            _cc.z = 4f;
+            Vector3 _mouseWorld = ClickPoint(Input.mousePosition,_playerCamera);
 
-
-
-            Vector3 _mouseWorld = _playerCamera.GetComponent<Camera>().ScreenToWorldPoint(_cc);
-            _mouseWorld.y = 0.3f;
-            //mouseWorld.z += mouseWorld.y;
-            //mouseWorld.y = 0;
             Debug.Log("Player: " + transform.position + ", Mouse: " + _mouseWorld + "Input: " + Input.mousePosition);
-
 
 
             //공격 효과 실행
             EffectDefaultLevel1._test = true;
 
-            //마우스 클릭 포인트로 조준
+            //마우스 클릭 포인트로 sphere들 조준(이동)
             _aiming.transform.LookAt(_mouseWorld);
 
             Attack(_mouseWorld);

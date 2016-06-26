@@ -8,9 +8,7 @@ public class CameraController : MonoBehaviour {
 
     private Transform _localPlayer = null;
     private Vector3 _defaultPlayerScale;
-
-    private const float DISTANCE_RATE = 4.3f;
-
+    
     void Update() {
         if (_localPlayer != null){
             FollowPlayer();
@@ -25,7 +23,7 @@ public class CameraController : MonoBehaviour {
 
     private void FollowPlayer() {
         Vector3 _localPlayerPosition = _localPlayer.position;
-        float _increaseRate = (_localPlayer.localScale.x - _defaultPlayerScale.x) * DISTANCE_RATE;
+        float _increaseRate = (_localPlayer.localScale.x - _defaultPlayerScale.x) * GlobalData.DISTANCE_RATE;
         float _forwardDistance = _defaultForwardDistance + _increaseRate;
         float _heightDistance = _defaultHeightDistance + _increaseRate;
         
