@@ -6,22 +6,17 @@ public class NetworkInitializer : MonoBehaviour {
 
     public GameObject _player;
     public NetworkManager _networkManager;
-
-    private const string SERVER_IP = "192.168.0.30";
-    private const int SERVER_PORT = 7777;
-    private bool _useNat = true;
-
+    
     void Start() {
         _networkManager = GetComponent<NetworkManager>();
 
-        _networkManager.networkAddress = SERVER_IP;
-        _networkManager.networkPort = SERVER_PORT;
+        _networkManager.networkAddress = GlobalData.SERVER_IP;
+        _networkManager.networkPort = GlobalData.PORT;
     }
 
     void OnGUI() {
         if (!NetworkServer.active && !NetworkClient.active)  {
             if (GUI.Button(new Rect(20, 20, 200, 25), "Start Server")) {
-                //Network.InitializeServer(20, SERVER_PORT, _useNat);
                 //_networkManager.StartServer();
                 _networkManager.StartHost();
             }
@@ -41,22 +36,4 @@ public class NetworkInitializer : MonoBehaviour {
             }
         }
     }
-
-    void OnServerInitialized() {
-        CreatePlayer();
-    }
-
-    void OnConnectedToServer() {
-        CreatePlayer();
-    }
-
-    void CreatePlayer() {
-        ;
-        //Vector3 _position = new Vector3(5f, 0f, 5f);
-        //Network.Instantiate(_player, _position, Quaternion.identity, 0);
-        ////GameObject test = (GameObject)Instantiate(_player, _position, Quaternion.identity);
-
-        ////NetworkServer.Spawn((GameObject)Instantiate(_player, _position, Quaternion.identity));
-    }
-
 }
