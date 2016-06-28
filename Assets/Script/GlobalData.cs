@@ -4,7 +4,7 @@ using System.Collections;
 public class GlobalData {
 
     //서버 아이피
-    public const string SERVER_IP = "192.168.0.30";
+    public const string SERVER_IP = "192.168.0.12";
 
     //접속 포트
     public const int PORT = 7777;
