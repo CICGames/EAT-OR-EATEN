@@ -11,7 +11,7 @@ public class EffectDefaultLevel1 : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        _parent = new Vector3(0, 0, 1.2f);
+        _parent = new Vector3(0, 0, 2f);
         _defaultPosition = transform.localPosition;
     }
 	

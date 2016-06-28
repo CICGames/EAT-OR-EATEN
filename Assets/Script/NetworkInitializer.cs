@@ -17,7 +17,7 @@ public class NetworkInitializer : MonoBehaviour {
         _networkManager.networkAddress = GlobalData.SERVER_IP;
         _networkManager.networkPort = GlobalData.PORT;
 
-        if (IsServer()) {
+        if (!IsServer()) {
             OpenServer();
         } else {
             if (CheckState()) {

@@ -7,15 +7,29 @@ using System;
 public class PlayerController : Character{
 
     public GameObject _playerCamera;
-    public GameObject _defaultAttack;
+    //public GameObject _defaultAttack;
     public float _defaultMoveSpeed;
+
     GameObject _aiming;
+
+    bool _cannonState = false;
+    float _nextAttackRate = 0.0f;
+
+    //기본공격
+    GameObject _skillDefault;
+
+    //스킬 3개 선택 했을 시 Start에서 넣어줘야함.
+    GameObject _skill_1;
+    GameObject _skill_2;
+    GameObject _skill_3;
 
     [SerializeField] private Rigidbody _myRigidbody;
     [SerializeField] MeshCollider _meshCollider;
 
     // Use this for initialization
     void Start() {
+        _skillDefault = _skill_Default_Level1;
+
         if (isLocalPlayer) {
             _playerCamera = Instantiate<GameObject>(_playerCamera);
             _playerCamera.GetComponent<CameraController>().SetPlayer(transform);
@@ -48,29 +62,36 @@ public class PlayerController : Character{
         if (Input.GetKey(KeyCode.D))
             _myRigidbody.AddForce(Vector3.right * Time.deltaTime * moveSpeed);
 
-        if (Input.GetMouseButtonDown(0)) {
-            Vector3 _mouseWorld = ClickPoint(Input.mousePosition,_playerCamera);
 
-            Debug.Log("Player: " + transform.position + ", Mouse: " + _mouseWorld + "Input: " + Input.mousePosition);
+        //항상 마우스를 조준함
+        Vector3 _mouseWorld = ClickPoint(Input.mousePosition,_playerCamera);
+        //마우스 클릭 좌표와 플레이어 좌표의 Y축을 동일하게 정해줌.
+        _mouseWorld.y = transform.position.y;
+        _aiming.transform.LookAt(_mouseWorld);
 
+        //  Debug.Log("Player: " + transform.position + ", Mouse: " + _mouseWorld + "Input: " + Input.mousePosition);
 
-            //공격 효과 실행
-            EffectDefaultLevel1._test = true;
-
-            //마우스 클릭 포인트로 sphere들 조준(이동)
-            _aiming.transform.LookAt(_mouseWorld);
-
-            Attack(_mouseWorld);
+        if (_cannonState) {
+            LoadCannon();
+        } else {
+            UnloadCannon();
         }
-        if (Input.GetMouseButtonDown(1)) {
-            EffectDefaultLevel1._test = false;
-            ;
+
+        if (Input.GetMouseButton(0)) {
+            //공격속도
+            if(Time.time > _nextAttackRate) {
+                _nextAttackRate = Time.time + _attackSpeed;
+                _cannonState = true;
+                CmdDefaultAttack(_skillDefault);
+            }
         }
+        if (Input.GetMouseButtonUp(0)) {
+            _cannonState = false;
+        }
+
+
+            //Attack(_mouseWorld,_defaultAttack);
     }
 
-    public void Attack(Vector3 _attackPoint) {
-        GameObject _at = Instantiate<GameObject>(_defaultAttack);
-        _at.GetComponent<SkillDefaultLevel1>().SetAttackPoint(transform.position, _attackPoint);
         
-    }
 }
