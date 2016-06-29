@@ -4,7 +4,7 @@ using System.Collections;
 public class GlobalData {
 
     //서버 아이피
-    public const string SERVER_IP = "192.168.0.12";
+    public const string SERVER_IP = "192.168.0.2";
 
     //접속 포트
     public const int PORT = 7777;
@@ -18,5 +18,8 @@ public class GlobalData {
     //케릭터 크기에 따른 카메라 거리
     public const float DISTANCE_RATE = 4.3f;
 
+    // 씬 정보
+    public const string INTRO_SCENE = "Intro";
+    public const string MAIN_SCENE = "Main";
 
 }

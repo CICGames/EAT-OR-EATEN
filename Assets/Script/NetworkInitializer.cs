@@ -1,29 +1,36 @@
 ﻿using UnityEngine;
-using System.Collections;
 using UnityEngine.Networking;
-using System;
-using System.Net;
+using UnityEngine.SceneManagement;
 
-public class NetworkInitializer : MonoBehaviour {
-
-    public GameObject _player;
-    public NetworkManager _networkManager;
+public class NetworkInitializer : NetworkManager {
 
     private float _loadingGauge = 0f;
+    private NetworkConnection _conn;
 
     void Start() {
-        _networkManager = GetComponent<NetworkManager>();
+        NetworkManager.singleton.networkAddress = GlobalData.SERVER_IP;
+        NetworkManager.singleton.networkPort = GlobalData.PORT;
 
-        _networkManager.networkAddress = GlobalData.SERVER_IP;
-        _networkManager.networkPort = GlobalData.PORT;
-
-        if (!IsServer()) {
+        if (IsServer()) { // 서버이면 서버 오픈
             OpenServer();
         } else {
-            if (CheckState()) {
-                _loadingGauge = 1f; // 모든 설정 완료
-            }
+            ConnectToServer();
         }
+    }
+    
+    
+    
+    public override void OnClientConnect(NetworkConnection _conn) {
+        base.OnClientConnect(_conn);
+        this._conn = _conn;
+
+        // 씬 변경
+        if (SceneManager.GetActiveScene().name.Equals(GlobalData.INTRO_SCENE))
+            SceneManager.LoadScene(GlobalData.MAIN_SCENE, LoadSceneMode.Single);
+    }
+
+    // 클라이언트의 연결이 끊겼을 경우 발생
+    public override void OnClientDisconnect(NetworkConnection _conn) {
         
     }
 
@@ -32,36 +39,22 @@ public class NetworkInitializer : MonoBehaviour {
     }
 
     private void OpenServer() {
-        _networkManager.StartHost();
-        //_networkManager.StartServer();
-    }
-
-    public bool CheckState() {
-        CheckServerOpen();
-        CheckUpdate();
-
-        return true;
+        StartHost();
+        //StartServer();
     }
     
-    public void Connect() {
+    public void ConnectToServer() {
+        CheckServerOpen(); // 서버가 열려있는지 체크
+        CheckUpdate(); // 업데이트 체크
+        GetUserInfomation(); // 사용자 정보 가져오기
+
         if (!NetworkClient.active) {
-            _networkManager.StartClient();
+            StartClient();
         }
         
     }
 
-    
-
-    // Update Check
-    void CheckUpdate() {
-        _loadingGauge = 0.5f;
-    }
-
-    public void CheckFinished(int _progressBar) {
-        Debug.Log(_progressBar);
-    }
-
-    // Server Check
+    // 서버가 열려있는지 체크
     void CheckServerOpen() {
         if (!NetworkServer.active) {
             Debug.Log("Server is not Open");
@@ -71,6 +64,28 @@ public class NetworkInitializer : MonoBehaviour {
         _loadingGauge = 0.2f;
     }
 
+    // 업데이트 체크
+    private bool CheckUpdate() {
+        _loadingGauge = 0.5f;
+        return true;
+    }
+
+    // 사용자 정보 가져오기
+    private bool GetUserInfomation() {
+        return true;
+    }
+
+    public void CheckFinished(int _progressBar) {
+        Debug.Log(_progressBar);
+    }
+
+    public void GameStart() {
+            GameObject player = (GameObject)Instantiate(playerPrefab, Vector3.zero, Quaternion.identity);
+            //NetworkServer.Spawn(player);
+    }
+
+
+    public NetworkConnection GetNetworkConnection() { return _conn; }
     public float GetLoadingGauge() { return _loadingGauge; }
     
 }

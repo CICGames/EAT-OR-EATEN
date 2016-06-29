@@ -92,6 +92,4 @@ public class PlayerController : Character{
 
             //Attack(_mouseWorld,_defaultAttack);
     }
-
-        
 }
