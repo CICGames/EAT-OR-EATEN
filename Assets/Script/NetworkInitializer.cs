@@ -11,55 +11,47 @@ public class NetworkInitializer : NetworkManager {
     void Start() {
         NetworkManager.singleton.networkAddress = GlobalData.SERVER_IP;
         NetworkManager.singleton.networkPort = GlobalData.PORT;
-
-        if (IsServer()) { // 서버이면 서버 오픈
+        
+        if (!IsServer()) { // 서버이면 서버 오픈
             OpenServer();
         } else {
             ConnectToServer();
         }
     }
-    
-    
-    
+
+
+
     public override void OnClientConnect(NetworkConnection _conn) {
-        base.OnClientConnect(_conn);
-        this._conn = _conn;
-        
         if (SceneManager.GetActiveScene().name.Equals(GlobalData.INTRO_SCENE))
             ServerChangeScene(GlobalData.MAIN_SCENE);
-
-        // 씬 변경
-        //if (SceneManager.GetActiveScene().name.Equals(GlobalData.INTRO_SCENE))
-        //    SceneManager.LoadScene(GlobalData.MAIN_SCENE, LoadSceneMode.Single);
     }
 
     // 클라이언트의 연결이 끊겼을 경우 발생
-    public override void OnClientDisconnect(NetworkConnection _conn) {
-        
-    }
+    //public override void OnClientDisconnect(NetworkConnection _conn) {
+
+    //}
 
     private bool IsServer() {
         return Network.player.ipAddress.Equals(GlobalData.SERVER_IP);
     }
 
     private void OpenServer() {
-        StartHost();
-        //StartServer();
+        singleton.StartHost();
     }
-    
+
     public void ConnectToServer() {
-        CheckInternetOpne(); // 인터넷이 되는지 확인
+        CheckInternetOpen(); // 인터넷이 되는지 확인
         CheckUpdate(); // 업데이트 체크
         GetUserInfomation(); // 사용자 정보 가져오기
 
         if (!NetworkClient.active) {
-            StartClient();
+            singleton.StartClient();
         }
-        
+
     }
 
     // 서버가 열려있는지 체크
-    void CheckInternetOpne() {
+    void CheckInternetOpen() {
         if (!isNetworkActive) {
             Debug.Log("No Internet");
             return;
@@ -68,7 +60,7 @@ public class NetworkInitializer : NetworkManager {
         _loadingGauge = 0.2f;
     }
 
-    // 업데이트 체크
+    // 업데이트 체크 q
     private bool CheckUpdate() {
         _loadingGauge = 0.5f;
         return true;
@@ -84,17 +76,21 @@ public class NetworkInitializer : NetworkManager {
     }
 
     public void GameStart() {
-        NetworkServer.Spawn(playerPrefab);
-            GameObject player = (GameObject)Instantiate(playerPrefab, Vector3.zero, Quaternion.identity);
-            //NetworkServer.Spawn(player);
+        //NetworkServer.Spawn(playerPrefab);
+        //GameObject player = (GameObject)Instantiate(playerPrefab, Vector3.zero, Quaternion.identity);
+        //       NetworkServer.Spawn(player);
     }
 
     // 플레이어 추가하기
     public override void OnServerAddPlayer(NetworkConnection conn, short playerControllerId) {
-        base.OnServerAddPlayer(conn, playerControllerId);
+        //  base.OnServerAddPlayer(conn, playerControllerId);
 
         // 플레이어 케릭터 정보 가져온 후 여기서 추가하자.
         this._playerControllerId = playerControllerId;
+
+        GameObject player = (GameObject)Instantiate(playerPrefab, Vector3.zero, Quaternion.identity);
+
+        NetworkServer.AddPlayerForConnection(conn, player, playerControllerId);
     }
 
 
@@ -103,7 +99,8 @@ public class NetworkInitializer : NetworkManager {
     public short GetPlayerControlId() { return _playerControllerId; }
 
     public void PlayerSpawn() {
-        Debug.Log("123");
+        Debug.Log(_playerControllerId);
         ClientScene.AddPlayer(client.connection, _playerControllerId);
+     //   ClientScene.AddPlayer(client.connection, _playerControllerId);
     }
 }

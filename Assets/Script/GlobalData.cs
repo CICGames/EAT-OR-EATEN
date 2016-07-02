@@ -4,9 +4,9 @@ using System.Collections;
 public class GlobalData {
 
     //서버 아이피
-    public const string SERVER_IP = "192.168.0.2";
+    public const string SERVER_IP = "192.168.1.10";
 
-    //접속 포트
+    //접속 포트rc
     public const int PORT = 7777;
 
     //마우스 클릭 포인트 지정

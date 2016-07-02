@@ -28,9 +28,8 @@ public class PlayerController : Character{
 
     // Use this for initialization
     void Start() {
-        _skillDefault = _skill_Default_Level1;
-
         if (isLocalPlayer) {
+            _skillDefault = _skill_Default_Level1;
             _playerCamera = Instantiate<GameObject>(_playerCamera);
             _playerCamera.GetComponent<CameraController>().SetPlayer(transform);
             _playerCamera.GetComponent<AudioListener>().enabled = true;

@@ -2,44 +2,677 @@ Initialize engine version: 5.3.5f1 (960ebf59018a)
 GfxDevice: creating device client; threaded=1
 Direct3D:
     Version:  Direct3D 11.0 [level 11.0]
-    Renderer: NVIDIA GeForce GTX 960M         (ID=0x139b)
-    Vendor:   NVIDIA
-    VRAM:     1995 MB
+    Renderer: Intel(R) HD Graphics Family (ID=0xa16)
+    Vendor:   Intel
+    VRAM:     2097 MB
 Begin MonoManager ReloadAssembly
-Platform assembly: E:\Project\CICGames\EAT-OR-EATEN\EOE_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading E:\Project\CICGames\EAT-OR-EATEN\EOE_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: E:\Project\CICGames\EAT-OR-EATEN\EOE_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading E:\Project\CICGames\EAT-OR-EATEN\EOE_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: E:\Project\CICGames\EAT-OR-EATEN\EOE_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading E:\Project\CICGames\EAT-OR-EATEN\EOE_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: E:\Project\CICGames\EAT-OR-EATEN\EOE_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading E:\Project\CICGames\EAT-OR-EATEN\EOE_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-- Completed reload, in  0.114 seconds
-Platform assembly: E:\Project\CICGames\EAT-OR-EATEN\EOE_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: E:\Project\CICGames\EAT-OR-EATEN\EOE_Data\Managed\System.dll (this message is harmless)
+Platform assembly: C:\Users\Daniel\Documents\GitHub\EAT-OR-EATEN\EOE_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Daniel\Documents\GitHub\EAT-OR-EATEN\EOE_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Daniel\Documents\GitHub\EAT-OR-EATEN\EOE_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Daniel\Documents\GitHub\EAT-OR-EATEN\EOE_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Daniel\Documents\GitHub\EAT-OR-EATEN\EOE_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Daniel\Documents\GitHub\EAT-OR-EATEN\EOE_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Daniel\Documents\GitHub\EAT-OR-EATEN\EOE_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Daniel\Documents\GitHub\EAT-OR-EATEN\EOE_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+- Completed reload, in  0.166 seconds
+Platform assembly: C:\Users\Daniel\Documents\GitHub\EAT-OR-EATEN\EOE_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Daniel\Documents\GitHub\EAT-OR-EATEN\EOE_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 0.553875 ms
+UnloadTime: 0.687667 ms
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-Setting up 2 worker threads for Enlighten.
-  Thread -> id: 416c -> priority: 1 
-  Thread -> id: 1a04 -> priority: 1 
-UnloadTime: 5.718902 ms
-123
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: 55dc -> priority: 1 
+UnloadTime: 21.630972 ms
+
+Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 339.
+Total: 0.641704 ms (FindLiveObjects: 0.035699 ms CreateObjectMapping: 0.026774 ms MarkObjects: 0.366815 ms  DeleteObjects: 0.211521 ms)
+
+0
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
 
-True
+ArgumentException: The thing you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at Character.CmdDefaultAttack (UnityEngine.GameObject _attackObject) [0x00000] in <filename unknown>:0 
+  at Character.InvokeCmdCmdDefaultAttack (UnityEngine.Networking.NetworkBehaviour obj, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkIdentity.HandleCommand (Int32 cmdHash, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.OnCommandMessage (UnityEngine.Networking.NetworkMessage netMsg) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.HandleReader (UnityEngine.Networking.NetworkReader reader, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.HandleBytes (System.Byte[] buffer, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.TransportRecieve (System.Byte[] bytes, Int32 numBytes, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.OnData (UnityEngine.Networking.NetworkConnection conn, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer+ServerSimpleWrapper.OnData (UnityEngine.Networking.NetworkConnection conn, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServerSimple.HandleData (Int32 connectionId, Int32 channelId, Int32 receivedSize, Byte error) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServerSimple.Update () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.InternalUpdate () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.Update () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkIdentity.UNetStaticUpdate () [0x00000] in <filename unknown>:0 
  
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+(Filename:  Line: -1)
 
-
-Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 411.
-Total: 0.400591 ms (FindLiveObjects: 0.021728 ms CreateObjectMapping: 0.012641 ms MarkObjects: 0.208987 ms  DeleteObjects: 0.156839 ms)
-
-There is already a player at that playerControllerId for this connections.
+ArgumentException: The thing you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at Character.CmdDefaultAttack (UnityEngine.GameObject _attackObject) [0x00000] in <filename unknown>:0 
+  at Character.InvokeCmdCmdDefaultAttack (UnityEngine.Networking.NetworkBehaviour obj, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkIdentity.HandleCommand (Int32 cmdHash, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.OnCommandMessage (UnityEngine.Networking.NetworkMessage netMsg) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.HandleReader (UnityEngine.Networking.NetworkReader reader, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.HandleBytes (System.Byte[] buffer, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.TransportRecieve (System.Byte[] bytes, Int32 numBytes, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.OnData (UnityEngine.Networking.NetworkConnection conn, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer+ServerSimpleWrapper.OnData (UnityEngine.Networking.NetworkConnection conn, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServerSimple.HandleData (Int32 connectionId, Int32 channelId, Int32 receivedSize, Byte error) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServerSimple.Update () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.InternalUpdate () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.Update () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkIdentity.UNetStaticUpdate () [0x00000] in <filename unknown>:0 
  
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+(Filename:  Line: -1)
 
+ArgumentException: The thing you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at Character.CmdDefaultAttack (UnityEngine.GameObject _attackObject) [0x00000] in <filename unknown>:0 
+  at Character.InvokeCmdCmdDefaultAttack (UnityEngine.Networking.NetworkBehaviour obj, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkIdentity.HandleCommand (Int32 cmdHash, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.OnCommandMessage (UnityEngine.Networking.NetworkMessage netMsg) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.HandleReader (UnityEngine.Networking.NetworkReader reader, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.HandleBytes (System.Byte[] buffer, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.TransportRecieve (System.Byte[] bytes, Int32 numBytes, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.OnData (UnityEngine.Networking.NetworkConnection conn, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer+ServerSimpleWrapper.OnData (UnityEngine.Networking.NetworkConnection conn, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServerSimple.HandleData (Int32 connectionId, Int32 channelId, Int32 receivedSize, Byte error) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServerSimple.Update () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.InternalUpdate () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.Update () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkIdentity.UNetStaticUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The thing you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at Character.CmdDefaultAttack (UnityEngine.GameObject _attackObject) [0x00000] in <filename unknown>:0 
+  at Character.InvokeCmdCmdDefaultAttack (UnityEngine.Networking.NetworkBehaviour obj, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkIdentity.HandleCommand (Int32 cmdHash, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.OnCommandMessage (UnityEngine.Networking.NetworkMessage netMsg) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.HandleReader (UnityEngine.Networking.NetworkReader reader, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.HandleBytes (System.Byte[] buffer, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.TransportRecieve (System.Byte[] bytes, Int32 numBytes, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.OnData (UnityEngine.Networking.NetworkConnection conn, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer+ServerSimpleWrapper.OnData (UnityEngine.Networking.NetworkConnection conn, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServerSimple.HandleData (Int32 connectionId, Int32 channelId, Int32 receivedSize, Byte error) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServerSimple.Update () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.InternalUpdate () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.Update () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkIdentity.UNetStaticUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The thing you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at Character.CmdDefaultAttack (UnityEngine.GameObject _attackObject) [0x00000] in <filename unknown>:0 
+  at Character.InvokeCmdCmdDefaultAttack (UnityEngine.Networking.NetworkBehaviour obj, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkIdentity.HandleCommand (Int32 cmdHash, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.OnCommandMessage (UnityEngine.Networking.NetworkMessage netMsg) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.HandleReader (UnityEngine.Networking.NetworkReader reader, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.HandleBytes (System.Byte[] buffer, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.TransportRecieve (System.Byte[] bytes, Int32 numBytes, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.OnData (UnityEngine.Networking.NetworkConnection conn, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer+ServerSimpleWrapper.OnData (UnityEngine.Networking.NetworkConnection conn, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServerSimple.HandleData (Int32 connectionId, Int32 channelId, Int32 receivedSize, Byte error) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServerSimple.Update () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.InternalUpdate () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.Update () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkIdentity.UNetStaticUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The thing you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at Character.CmdDefaultAttack (UnityEngine.GameObject _attackObject) [0x00000] in <filename unknown>:0 
+  at Character.InvokeCmdCmdDefaultAttack (UnityEngine.Networking.NetworkBehaviour obj, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkIdentity.HandleCommand (Int32 cmdHash, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.OnCommandMessage (UnityEngine.Networking.NetworkMessage netMsg) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.HandleReader (UnityEngine.Networking.NetworkReader reader, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.HandleBytes (System.Byte[] buffer, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.TransportRecieve (System.Byte[] bytes, Int32 numBytes, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.OnData (UnityEngine.Networking.NetworkConnection conn, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer+ServerSimpleWrapper.OnData (UnityEngine.Networking.NetworkConnection conn, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServerSimple.HandleData (Int32 connectionId, Int32 channelId, Int32 receivedSize, Byte error) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServerSimple.Update () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.InternalUpdate () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.Update () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkIdentity.UNetStaticUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The thing you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at Character.CmdDefaultAttack (UnityEngine.GameObject _attackObject) [0x00000] in <filename unknown>:0 
+  at Character.InvokeCmdCmdDefaultAttack (UnityEngine.Networking.NetworkBehaviour obj, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkIdentity.HandleCommand (Int32 cmdHash, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.OnCommandMessage (UnityEngine.Networking.NetworkMessage netMsg) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.HandleReader (UnityEngine.Networking.NetworkReader reader, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.HandleBytes (System.Byte[] buffer, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.TransportRecieve (System.Byte[] bytes, Int32 numBytes, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.OnData (UnityEngine.Networking.NetworkConnection conn, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer+ServerSimpleWrapper.OnData (UnityEngine.Networking.NetworkConnection conn, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServerSimple.HandleData (Int32 connectionId, Int32 channelId, Int32 receivedSize, Byte error) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServerSimple.Update () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.InternalUpdate () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.Update () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkIdentity.UNetStaticUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The thing you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at Character.CmdDefaultAttack (UnityEngine.GameObject _attackObject) [0x00000] in <filename unknown>:0 
+  at Character.InvokeCmdCmdDefaultAttack (UnityEngine.Networking.NetworkBehaviour obj, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkIdentity.HandleCommand (Int32 cmdHash, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.OnCommandMessage (UnityEngine.Networking.NetworkMessage netMsg) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.HandleReader (UnityEngine.Networking.NetworkReader reader, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.HandleBytes (System.Byte[] buffer, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.TransportRecieve (System.Byte[] bytes, Int32 numBytes, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.OnData (UnityEngine.Networking.NetworkConnection conn, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer+ServerSimpleWrapper.OnData (UnityEngine.Networking.NetworkConnection conn, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServerSimple.HandleData (Int32 connectionId, Int32 channelId, Int32 receivedSize, Byte error) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServerSimple.Update () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.InternalUpdate () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.Update () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkIdentity.UNetStaticUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The thing you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at Character.CmdDefaultAttack (UnityEngine.GameObject _attackObject) [0x00000] in <filename unknown>:0 
+  at Character.InvokeCmdCmdDefaultAttack (UnityEngine.Networking.NetworkBehaviour obj, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkIdentity.HandleCommand (Int32 cmdHash, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.OnCommandMessage (UnityEngine.Networking.NetworkMessage netMsg) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.HandleReader (UnityEngine.Networking.NetworkReader reader, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.HandleBytes (System.Byte[] buffer, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.TransportRecieve (System.Byte[] bytes, Int32 numBytes, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.OnData (UnityEngine.Networking.NetworkConnection conn, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer+ServerSimpleWrapper.OnData (UnityEngine.Networking.NetworkConnection conn, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServerSimple.HandleData (Int32 connectionId, Int32 channelId, Int32 receivedSize, Byte error) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServerSimple.Update () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.InternalUpdate () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.Update () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkIdentity.UNetStaticUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The thing you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at Character.CmdDefaultAttack (UnityEngine.GameObject _attackObject) [0x00000] in <filename unknown>:0 
+  at Character.InvokeCmdCmdDefaultAttack (UnityEngine.Networking.NetworkBehaviour obj, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkIdentity.HandleCommand (Int32 cmdHash, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.OnCommandMessage (UnityEngine.Networking.NetworkMessage netMsg) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.HandleReader (UnityEngine.Networking.NetworkReader reader, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.HandleBytes (System.Byte[] buffer, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.TransportRecieve (System.Byte[] bytes, Int32 numBytes, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.OnData (UnityEngine.Networking.NetworkConnection conn, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer+ServerSimpleWrapper.OnData (UnityEngine.Networking.NetworkConnection conn, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServerSimple.HandleData (Int32 connectionId, Int32 channelId, Int32 receivedSize, Byte error) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServerSimple.Update () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.InternalUpdate () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.Update () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkIdentity.UNetStaticUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The thing you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at Character.CmdDefaultAttack (UnityEngine.GameObject _attackObject) [0x00000] in <filename unknown>:0 
+  at Character.InvokeCmdCmdDefaultAttack (UnityEngine.Networking.NetworkBehaviour obj, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkIdentity.HandleCommand (Int32 cmdHash, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.OnCommandMessage (UnityEngine.Networking.NetworkMessage netMsg) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.HandleReader (UnityEngine.Networking.NetworkReader reader, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.HandleBytes (System.Byte[] buffer, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.TransportRecieve (System.Byte[] bytes, Int32 numBytes, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.OnData (UnityEngine.Networking.NetworkConnection conn, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer+ServerSimpleWrapper.OnData (UnityEngine.Networking.NetworkConnection conn, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServerSimple.HandleData (Int32 connectionId, Int32 channelId, Int32 receivedSize, Byte error) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServerSimple.Update () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.InternalUpdate () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.Update () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkIdentity.UNetStaticUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The thing you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at Character.CmdDefaultAttack (UnityEngine.GameObject _attackObject) [0x00000] in <filename unknown>:0 
+  at Character.InvokeCmdCmdDefaultAttack (UnityEngine.Networking.NetworkBehaviour obj, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkIdentity.HandleCommand (Int32 cmdHash, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.OnCommandMessage (UnityEngine.Networking.NetworkMessage netMsg) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.HandleReader (UnityEngine.Networking.NetworkReader reader, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.HandleBytes (System.Byte[] buffer, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.TransportRecieve (System.Byte[] bytes, Int32 numBytes, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.OnData (UnityEngine.Networking.NetworkConnection conn, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer+ServerSimpleWrapper.OnData (UnityEngine.Networking.NetworkConnection conn, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServerSimple.HandleData (Int32 connectionId, Int32 channelId, Int32 receivedSize, Byte error) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServerSimple.Update () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.InternalUpdate () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.Update () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkIdentity.UNetStaticUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The thing you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at Character.CmdDefaultAttack (UnityEngine.GameObject _attackObject) [0x00000] in <filename unknown>:0 
+  at Character.InvokeCmdCmdDefaultAttack (UnityEngine.Networking.NetworkBehaviour obj, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkIdentity.HandleCommand (Int32 cmdHash, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.OnCommandMessage (UnityEngine.Networking.NetworkMessage netMsg) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.HandleReader (UnityEngine.Networking.NetworkReader reader, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.HandleBytes (System.Byte[] buffer, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.TransportRecieve (System.Byte[] bytes, Int32 numBytes, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.OnData (UnityEngine.Networking.NetworkConnection conn, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer+ServerSimpleWrapper.OnData (UnityEngine.Networking.NetworkConnection conn, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServerSimple.HandleData (Int32 connectionId, Int32 channelId, Int32 receivedSize, Byte error) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServerSimple.Update () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.InternalUpdate () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.Update () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkIdentity.UNetStaticUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The thing you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at Character.CmdDefaultAttack (UnityEngine.GameObject _attackObject) [0x00000] in <filename unknown>:0 
+  at Character.InvokeCmdCmdDefaultAttack (UnityEngine.Networking.NetworkBehaviour obj, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkIdentity.HandleCommand (Int32 cmdHash, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.OnCommandMessage (UnityEngine.Networking.NetworkMessage netMsg) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.HandleReader (UnityEngine.Networking.NetworkReader reader, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.HandleBytes (System.Byte[] buffer, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.TransportRecieve (System.Byte[] bytes, Int32 numBytes, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.OnData (UnityEngine.Networking.NetworkConnection conn, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer+ServerSimpleWrapper.OnData (UnityEngine.Networking.NetworkConnection conn, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServerSimple.HandleData (Int32 connectionId, Int32 channelId, Int32 receivedSize, Byte error) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServerSimple.Update () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.InternalUpdate () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.Update () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkIdentity.UNetStaticUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The thing you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at Character.CmdDefaultAttack (UnityEngine.GameObject _attackObject) [0x00000] in <filename unknown>:0 
+  at Character.InvokeCmdCmdDefaultAttack (UnityEngine.Networking.NetworkBehaviour obj, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkIdentity.HandleCommand (Int32 cmdHash, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.OnCommandMessage (UnityEngine.Networking.NetworkMessage netMsg) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.HandleReader (UnityEngine.Networking.NetworkReader reader, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.HandleBytes (System.Byte[] buffer, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.TransportRecieve (System.Byte[] bytes, Int32 numBytes, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.OnData (UnityEngine.Networking.NetworkConnection conn, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer+ServerSimpleWrapper.OnData (UnityEngine.Networking.NetworkConnection conn, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServerSimple.HandleData (Int32 connectionId, Int32 channelId, Int32 receivedSize, Byte error) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServerSimple.Update () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.InternalUpdate () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.Update () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkIdentity.UNetStaticUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The thing you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at Character.CmdDefaultAttack (UnityEngine.GameObject _attackObject) [0x00000] in <filename unknown>:0 
+  at Character.InvokeCmdCmdDefaultAttack (UnityEngine.Networking.NetworkBehaviour obj, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkIdentity.HandleCommand (Int32 cmdHash, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.OnCommandMessage (UnityEngine.Networking.NetworkMessage netMsg) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.HandleReader (UnityEngine.Networking.NetworkReader reader, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.HandleBytes (System.Byte[] buffer, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.TransportRecieve (System.Byte[] bytes, Int32 numBytes, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.OnData (UnityEngine.Networking.NetworkConnection conn, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer+ServerSimpleWrapper.OnData (UnityEngine.Networking.NetworkConnection conn, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServerSimple.HandleData (Int32 connectionId, Int32 channelId, Int32 receivedSize, Byte error) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServerSimple.Update () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.InternalUpdate () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.Update () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkIdentity.UNetStaticUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The thing you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at Character.CmdDefaultAttack (UnityEngine.GameObject _attackObject) [0x00000] in <filename unknown>:0 
+  at Character.InvokeCmdCmdDefaultAttack (UnityEngine.Networking.NetworkBehaviour obj, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkIdentity.HandleCommand (Int32 cmdHash, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.OnCommandMessage (UnityEngine.Networking.NetworkMessage netMsg) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.HandleReader (UnityEngine.Networking.NetworkReader reader, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.HandleBytes (System.Byte[] buffer, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.TransportRecieve (System.Byte[] bytes, Int32 numBytes, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.OnData (UnityEngine.Networking.NetworkConnection conn, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer+ServerSimpleWrapper.OnData (UnityEngine.Networking.NetworkConnection conn, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServerSimple.HandleData (Int32 connectionId, Int32 channelId, Int32 receivedSize, Byte error) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServerSimple.Update () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.InternalUpdate () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.Update () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkIdentity.UNetStaticUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The thing you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at Character.CmdDefaultAttack (UnityEngine.GameObject _attackObject) [0x00000] in <filename unknown>:0 
+  at Character.InvokeCmdCmdDefaultAttack (UnityEngine.Networking.NetworkBehaviour obj, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkIdentity.HandleCommand (Int32 cmdHash, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.OnCommandMessage (UnityEngine.Networking.NetworkMessage netMsg) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.HandleReader (UnityEngine.Networking.NetworkReader reader, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.HandleBytes (System.Byte[] buffer, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.TransportRecieve (System.Byte[] bytes, Int32 numBytes, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.OnData (UnityEngine.Networking.NetworkConnection conn, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer+ServerSimpleWrapper.OnData (UnityEngine.Networking.NetworkConnection conn, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServerSimple.HandleData (Int32 connectionId, Int32 channelId, Int32 receivedSize, Byte error) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServerSimple.Update () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.InternalUpdate () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.Update () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkIdentity.UNetStaticUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The thing you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at Character.CmdDefaultAttack (UnityEngine.GameObject _attackObject) [0x00000] in <filename unknown>:0 
+  at Character.InvokeCmdCmdDefaultAttack (UnityEngine.Networking.NetworkBehaviour obj, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkIdentity.HandleCommand (Int32 cmdHash, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.OnCommandMessage (UnityEngine.Networking.NetworkMessage netMsg) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.HandleReader (UnityEngine.Networking.NetworkReader reader, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.HandleBytes (System.Byte[] buffer, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.TransportRecieve (System.Byte[] bytes, Int32 numBytes, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.OnData (UnityEngine.Networking.NetworkConnection conn, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer+ServerSimpleWrapper.OnData (UnityEngine.Networking.NetworkConnection conn, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServerSimple.HandleData (Int32 connectionId, Int32 channelId, Int32 receivedSize, Byte error) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServerSimple.Update () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.InternalUpdate () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.Update () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkIdentity.UNetStaticUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The thing you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at Character.CmdDefaultAttack (UnityEngine.GameObject _attackObject) [0x00000] in <filename unknown>:0 
+  at Character.InvokeCmdCmdDefaultAttack (UnityEngine.Networking.NetworkBehaviour obj, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkIdentity.HandleCommand (Int32 cmdHash, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.OnCommandMessage (UnityEngine.Networking.NetworkMessage netMsg) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.HandleReader (UnityEngine.Networking.NetworkReader reader, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.HandleBytes (System.Byte[] buffer, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.TransportRecieve (System.Byte[] bytes, Int32 numBytes, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.OnData (UnityEngine.Networking.NetworkConnection conn, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer+ServerSimpleWrapper.OnData (UnityEngine.Networking.NetworkConnection conn, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServerSimple.HandleData (Int32 connectionId, Int32 channelId, Int32 receivedSize, Byte error) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServerSimple.Update () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.InternalUpdate () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.Update () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkIdentity.UNetStaticUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The thing you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at Character.CmdDefaultAttack (UnityEngine.GameObject _attackObject) [0x00000] in <filename unknown>:0 
+  at Character.InvokeCmdCmdDefaultAttack (UnityEngine.Networking.NetworkBehaviour obj, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkIdentity.HandleCommand (Int32 cmdHash, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.OnCommandMessage (UnityEngine.Networking.NetworkMessage netMsg) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.HandleReader (UnityEngine.Networking.NetworkReader reader, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.HandleBytes (System.Byte[] buffer, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.TransportRecieve (System.Byte[] bytes, Int32 numBytes, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.OnData (UnityEngine.Networking.NetworkConnection conn, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer+ServerSimpleWrapper.OnData (UnityEngine.Networking.NetworkConnection conn, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServerSimple.HandleData (Int32 connectionId, Int32 channelId, Int32 receivedSize, Byte error) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServerSimple.Update () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.InternalUpdate () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.Update () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkIdentity.UNetStaticUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The thing you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at Character.CmdDefaultAttack (UnityEngine.GameObject _attackObject) [0x00000] in <filename unknown>:0 
+  at Character.InvokeCmdCmdDefaultAttack (UnityEngine.Networking.NetworkBehaviour obj, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkIdentity.HandleCommand (Int32 cmdHash, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.OnCommandMessage (UnityEngine.Networking.NetworkMessage netMsg) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.HandleReader (UnityEngine.Networking.NetworkReader reader, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.HandleBytes (System.Byte[] buffer, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.TransportRecieve (System.Byte[] bytes, Int32 numBytes, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.OnData (UnityEngine.Networking.NetworkConnection conn, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer+ServerSimpleWrapper.OnData (UnityEngine.Networking.NetworkConnection conn, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServerSimple.HandleData (Int32 connectionId, Int32 channelId, Int32 receivedSize, Byte error) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServerSimple.Update () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.InternalUpdate () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.Update () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkIdentity.UNetStaticUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The thing you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at Character.CmdDefaultAttack (UnityEngine.GameObject _attackObject) [0x00000] in <filename unknown>:0 
+  at Character.InvokeCmdCmdDefaultAttack (UnityEngine.Networking.NetworkBehaviour obj, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkIdentity.HandleCommand (Int32 cmdHash, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.OnCommandMessage (UnityEngine.Networking.NetworkMessage netMsg) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.HandleReader (UnityEngine.Networking.NetworkReader reader, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.HandleBytes (System.Byte[] buffer, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.TransportRecieve (System.Byte[] bytes, Int32 numBytes, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.OnData (UnityEngine.Networking.NetworkConnection conn, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer+ServerSimpleWrapper.OnData (UnityEngine.Networking.NetworkConnection conn, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServerSimple.HandleData (Int32 connectionId, Int32 channelId, Int32 receivedSize, Byte error) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServerSimple.Update () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.InternalUpdate () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.Update () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkIdentity.UNetStaticUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The thing you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at Character.CmdDefaultAttack (UnityEngine.GameObject _attackObject) [0x00000] in <filename unknown>:0 
+  at Character.InvokeCmdCmdDefaultAttack (UnityEngine.Networking.NetworkBehaviour obj, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkIdentity.HandleCommand (Int32 cmdHash, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.OnCommandMessage (UnityEngine.Networking.NetworkMessage netMsg) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.HandleReader (UnityEngine.Networking.NetworkReader reader, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.HandleBytes (System.Byte[] buffer, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.TransportRecieve (System.Byte[] bytes, Int32 numBytes, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.OnData (UnityEngine.Networking.NetworkConnection conn, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer+ServerSimpleWrapper.OnData (UnityEngine.Networking.NetworkConnection conn, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServerSimple.HandleData (Int32 connectionId, Int32 channelId, Int32 receivedSize, Byte error) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServerSimple.Update () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.InternalUpdate () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.Update () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkIdentity.UNetStaticUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The thing you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at Character.CmdDefaultAttack (UnityEngine.GameObject _attackObject) [0x00000] in <filename unknown>:0 
+  at Character.InvokeCmdCmdDefaultAttack (UnityEngine.Networking.NetworkBehaviour obj, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkIdentity.HandleCommand (Int32 cmdHash, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.OnCommandMessage (UnityEngine.Networking.NetworkMessage netMsg) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.HandleReader (UnityEngine.Networking.NetworkReader reader, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.HandleBytes (System.Byte[] buffer, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.TransportRecieve (System.Byte[] bytes, Int32 numBytes, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.OnData (UnityEngine.Networking.NetworkConnection conn, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer+ServerSimpleWrapper.OnData (UnityEngine.Networking.NetworkConnection conn, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServerSimple.HandleData (Int32 connectionId, Int32 channelId, Int32 receivedSize, Byte error) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServerSimple.Update () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.InternalUpdate () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.Update () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkIdentity.UNetStaticUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Log: connection {1} has been disconnected by timeout; address {::ffff:192.168.1.10:60936}
+ArgumentException: The thing you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at Character.CmdDefaultAttack (UnityEngine.GameObject _attackObject) [0x00000] in <filename unknown>:0 
+  at Character.InvokeCmdCmdDefaultAttack (UnityEngine.Networking.NetworkBehaviour obj, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkIdentity.HandleCommand (Int32 cmdHash, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.OnCommandMessage (UnityEngine.Networking.NetworkMessage netMsg) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.HandleReader (UnityEngine.Networking.NetworkReader reader, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.HandleBytes (System.Byte[] buffer, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.TransportRecieve (System.Byte[] bytes, Int32 numBytes, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.OnData (UnityEngine.Networking.NetworkConnection conn, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer+ServerSimpleWrapper.OnData (UnityEngine.Networking.NetworkConnection conn, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServerSimple.HandleData (Int32 connectionId, Int32 channelId, Int32 receivedSize, Byte error) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServerSimple.Update () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.InternalUpdate () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.Update () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkIdentity.UNetStaticUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The thing you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at Character.CmdDefaultAttack (UnityEngine.GameObject _attackObject) [0x00000] in <filename unknown>:0 
+  at Character.InvokeCmdCmdDefaultAttack (UnityEngine.Networking.NetworkBehaviour obj, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkIdentity.HandleCommand (Int32 cmdHash, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.OnCommandMessage (UnityEngine.Networking.NetworkMessage netMsg) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.HandleReader (UnityEngine.Networking.NetworkReader reader, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.HandleBytes (System.Byte[] buffer, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.TransportRecieve (System.Byte[] bytes, Int32 numBytes, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.OnData (UnityEngine.Networking.NetworkConnection conn, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer+ServerSimpleWrapper.OnData (UnityEngine.Networking.NetworkConnection conn, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServerSimple.HandleData (Int32 connectionId, Int32 channelId, Int32 receivedSize, Byte error) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServerSimple.Update () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.InternalUpdate () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.Update () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkIdentity.UNetStaticUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The thing you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at Character.CmdDefaultAttack (UnityEngine.GameObject _attackObject) [0x00000] in <filename unknown>:0 
+  at Character.InvokeCmdCmdDefaultAttack (UnityEngine.Networking.NetworkBehaviour obj, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkIdentity.HandleCommand (Int32 cmdHash, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.OnCommandMessage (UnityEngine.Networking.NetworkMessage netMsg) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.HandleReader (UnityEngine.Networking.NetworkReader reader, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.HandleBytes (System.Byte[] buffer, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.TransportRecieve (System.Byte[] bytes, Int32 numBytes, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.OnData (UnityEngine.Networking.NetworkConnection conn, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer+ServerSimpleWrapper.OnData (UnityEngine.Networking.NetworkConnection conn, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServerSimple.HandleData (Int32 connectionId, Int32 channelId, Int32 receivedSize, Byte error) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServerSimple.Update () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.InternalUpdate () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.Update () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkIdentity.UNetStaticUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The thing you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at Character.CmdDefaultAttack (UnityEngine.GameObject _attackObject) [0x00000] in <filename unknown>:0 
+  at Character.InvokeCmdCmdDefaultAttack (UnityEngine.Networking.NetworkBehaviour obj, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkIdentity.HandleCommand (Int32 cmdHash, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.OnCommandMessage (UnityEngine.Networking.NetworkMessage netMsg) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.HandleReader (UnityEngine.Networking.NetworkReader reader, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.HandleBytes (System.Byte[] buffer, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.TransportRecieve (System.Byte[] bytes, Int32 numBytes, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.OnData (UnityEngine.Networking.NetworkConnection conn, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer+ServerSimpleWrapper.OnData (UnityEngine.Networking.NetworkConnection conn, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServerSimple.HandleData (Int32 connectionId, Int32 channelId, Int32 receivedSize, Byte error) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServerSimple.Update () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.InternalUpdate () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.Update () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkIdentity.UNetStaticUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The thing you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at Character.CmdDefaultAttack (UnityEngine.GameObject _attackObject) [0x00000] in <filename unknown>:0 
+  at Character.InvokeCmdCmdDefaultAttack (UnityEngine.Networking.NetworkBehaviour obj, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkIdentity.HandleCommand (Int32 cmdHash, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.OnCommandMessage (UnityEngine.Networking.NetworkMessage netMsg) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.HandleReader (UnityEngine.Networking.NetworkReader reader, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.HandleBytes (System.Byte[] buffer, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.TransportRecieve (System.Byte[] bytes, Int32 numBytes, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.OnData (UnityEngine.Networking.NetworkConnection conn, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer+ServerSimpleWrapper.OnData (UnityEngine.Networking.NetworkConnection conn, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServerSimple.HandleData (Int32 connectionId, Int32 channelId, Int32 receivedSize, Byte error) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServerSimple.Update () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.InternalUpdate () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.Update () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkIdentity.UNetStaticUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The thing you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at Character.CmdDefaultAttack (UnityEngine.GameObject _attackObject) [0x00000] in <filename unknown>:0 
+  at Character.InvokeCmdCmdDefaultAttack (UnityEngine.Networking.NetworkBehaviour obj, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkIdentity.HandleCommand (Int32 cmdHash, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.OnCommandMessage (UnityEngine.Networking.NetworkMessage netMsg) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.HandleReader (UnityEngine.Networking.NetworkReader reader, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.HandleBytes (System.Byte[] buffer, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.TransportRecieve (System.Byte[] bytes, Int32 numBytes, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.OnData (UnityEngine.Networking.NetworkConnection conn, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer+ServerSimpleWrapper.OnData (UnityEngine.Networking.NetworkConnection conn, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServerSimple.HandleData (Int32 connectionId, Int32 channelId, Int32 receivedSize, Byte error) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServerSimple.Update () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.InternalUpdate () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.Update () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkIdentity.UNetStaticUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The thing you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at Character.CmdDefaultAttack (UnityEngine.GameObject _attackObject) [0x00000] in <filename unknown>:0 
+  at Character.InvokeCmdCmdDefaultAttack (UnityEngine.Networking.NetworkBehaviour obj, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkIdentity.HandleCommand (Int32 cmdHash, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.OnCommandMessage (UnityEngine.Networking.NetworkMessage netMsg) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.HandleReader (UnityEngine.Networking.NetworkReader reader, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.HandleBytes (System.Byte[] buffer, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.TransportRecieve (System.Byte[] bytes, Int32 numBytes, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.OnData (UnityEngine.Networking.NetworkConnection conn, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer+ServerSimpleWrapper.OnData (UnityEngine.Networking.NetworkConnection conn, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServerSimple.HandleData (Int32 connectionId, Int32 channelId, Int32 receivedSize, Byte error) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServerSimple.Update () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.InternalUpdate () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.Update () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkIdentity.UNetStaticUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Log: connection {1} has been disconnected by timeout; address {::ffff:192.168.1.10:55963}
