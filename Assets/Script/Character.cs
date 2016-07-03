@@ -48,10 +48,12 @@ public class Character : NetworkBehaviour {
     }
 
     //기본 공격 함수. _attackObject에 넣는거 날아감.
-    [Command]
-    protected void CmdDefaultAttack(GameObject _attackObject) {
+  //  [Command]
+    protected void DefaultAttack(GameObject _attackObject) {
 
         GameObject bullet = (GameObject)Instantiate(_attackObject,_skill_Default_Spawn.position, _skill_Default_Spawn.rotation);
+
+        ClientScene.RegisterPrefab(bullet);
 
         bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 6.0f;
 

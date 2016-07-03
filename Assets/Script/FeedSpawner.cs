@@ -33,8 +33,12 @@ public class FeedSpawner : NetworkBehaviour {
         if (_newFeeds.Length < _numberOfPickup1) {
             Vector3 _spawnPosition = new Vector3(Random.Range(1, _x_range), 10, Random.Range(1, _z_range));
             GameObject _pickup = (GameObject)Instantiate(_feedPrefab, _spawnPosition, Quaternion.identity);
+
+            ClientScene.RegisterPrefab(_pickup);
+
             _pickup.transform.parent = _parent.transform;
             NetworkServer.Spawn(_pickup);// generate pickup at random position
+            
         }
     }
     

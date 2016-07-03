@@ -46,9 +46,9 @@ public class PlayerController : Character{
 
     // Update is called once per frame
     void Update() {
-        if (!isLocalPlayer) {
-            return;
-        }
+        //if (!isLocalPlayer) {
+        //    return;
+        //}
 
         float moveSpeed = _defaultMoveSpeed;
 
@@ -81,7 +81,7 @@ public class PlayerController : Character{
             if(Time.time > _nextAttackRate) {
                 _nextAttackRate = Time.time + _attackSpeed;
                 _cannonState = true;
-                CmdDefaultAttack(_skillDefault);
+                DefaultAttack(_skillDefault);
             }
         }
         if (Input.GetMouseButtonUp(0)) {
