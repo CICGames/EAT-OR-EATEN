@@ -36,6 +36,7 @@ public class Character : NetworkBehaviour {
     }
 
     //대포 앞으로 움직임.
+
     protected void LoadCannon() {
         _skill_Default_Cannon.GetComponent<MeshRenderer>().enabled = true;
         _skill_Default_Cannon.transform.localPosition = Vector3.Lerp(_skill_Default_Cannon.transform.localPosition, new Vector3(0,0,1), Time.deltaTime * 13f);
@@ -47,19 +48,21 @@ public class Character : NetworkBehaviour {
           _skill_Default_Cannon.GetComponent<MeshRenderer>().enabled = false;
     }
 
+
+
     //기본 공격 함수. _attackObject에 넣는거 날아감.
-  //  [Command]
-    protected void DefaultAttack(GameObject _attackObject) {
+    [Command]
+    protected void CmdDefaultAttack(GameObject _attackObject) {
 
-        GameObject bullet = (GameObject)Instantiate(_attackObject,_skill_Default_Spawn.position, _skill_Default_Spawn.rotation);
-
-        ClientScene.RegisterPrefab(bullet);
-
+        GameObject bullet = (GameObject)Instantiate(_attackObject, _skill_Default_Spawn.position, _skill_Default_Spawn.rotation);
         bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 6.0f;
-
         NetworkServer.Spawn(bullet);
-
         Destroy(bullet, 2);
+
+        //Debug.Log(NetworkServer.active);
+        //NetworkServer.Spawn(bullet);
+
+        //Destroy(bullet, 2);
     }
 
 

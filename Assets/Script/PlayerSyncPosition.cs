@@ -26,7 +26,7 @@ public class PlayerSyncPosition : NetworkBehaviour {
         }
     }
 
-    [Command] // 클라이언트에서 서버로 전송? 적용?
+    [Command] // 서버에서 수행
     void CmdProvidePostionToServer(Vector3 _pos, Quaternion _rot, Vector3 _scale) {
         _syncPosition = _pos;
         _syncRatation = _rot;

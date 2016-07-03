@@ -29,13 +29,13 @@ public class PlayerController : Character{
     // Use this for initialization
     void Start() {
         if (isLocalPlayer) {
-            _skillDefault = _skill_Default_Level1;
             _playerCamera = Instantiate<GameObject>(_playerCamera);
             _playerCamera.GetComponent<CameraController>().SetPlayer(transform);
             _playerCamera.GetComponent<AudioListener>().enabled = true;
-
-            _aiming = transform.GetChild(0).GetChild(0).gameObject;
         }
+
+        _skillDefault = _skill_Default_Level1;
+        _aiming = transform.GetChild(0).GetChild(0).gameObject;
     }
 
     void OnDestroy() {
@@ -46,9 +46,9 @@ public class PlayerController : Character{
 
     // Update is called once per frame
     void Update() {
-        //if (!isLocalPlayer) {
-        //    return;
-        //}
+        if (!isLocalPlayer) {
+            return;
+        }
 
         float moveSpeed = _defaultMoveSpeed;
 
@@ -70,25 +70,29 @@ public class PlayerController : Character{
 
         //  Debug.Log("Player: " + transform.position + ", Mouse: " + _mouseWorld + "Input: " + Input.mousePosition);
 
-        if (_cannonState) {
+        if (Input.GetMouseButton(0)) {
             LoadCannon();
+
+            //공격속도
+            if (Time.time > _nextAttackRate) {
+                _nextAttackRate = Time.time + _attackSpeed;
+                _cannonState = true;
+                CmdAtack();
+                //CmdDefaultAttack(_skillDefault);
+            }
         } else {
             UnloadCannon();
         }
 
-        if (Input.GetMouseButton(0)) {
-            //공격속도
-            if(Time.time > _nextAttackRate) {
-                _nextAttackRate = Time.time + _attackSpeed;
-                _cannonState = true;
-                DefaultAttack(_skillDefault);
-            }
-        }
-        if (Input.GetMouseButtonUp(0)) {
-            _cannonState = false;
-        }
-
 
             //Attack(_mouseWorld,_defaultAttack);
+    }
+
+    [Command]
+    private void CmdAtack() {
+        GameObject bullet = (GameObject)Instantiate(_skillDefault, _skill_Default_Spawn.position, _skill_Default_Spawn.rotation);
+        bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 6.0f;
+        NetworkServer.Spawn(bullet);
+        Destroy(bullet, 2);
     }
 }

@@ -12,7 +12,7 @@ public class NetworkInitializer : NetworkManager {
         NetworkManager.singleton.networkAddress = GlobalData.SERVER_IP;
         NetworkManager.singleton.networkPort = GlobalData.PORT;
         
-        if (!IsServer()) { // 서버이면 서버 오픈
+        if (IsServer()) { // 서버이면 서버 오픈
             OpenServer();
         } else {
             ConnectToServer();
@@ -22,6 +22,8 @@ public class NetworkInitializer : NetworkManager {
 
 
     public override void OnClientConnect(NetworkConnection _conn) {
+        _loadingGauge = 1f;
+
         if (SceneManager.GetActiveScene().name.Equals(GlobalData.INTRO_SCENE))
             ServerChangeScene(GlobalData.MAIN_SCENE);
     }
@@ -36,7 +38,7 @@ public class NetworkInitializer : NetworkManager {
     }
 
     private void OpenServer() {
-        singleton.StartHost();
+        StartHost();
     }
 
     public void ConnectToServer() {
@@ -45,14 +47,14 @@ public class NetworkInitializer : NetworkManager {
         GetUserInfomation(); // 사용자 정보 가져오기
 
         if (!NetworkClient.active) {
-            singleton.StartClient();
+            StartClient();
         }
 
     }
 
     // 서버가 열려있는지 체크
     void CheckInternetOpen() {
-        if (!isNetworkActive) {
+        if (isNetworkActive) {
             Debug.Log("No Internet");
             return;
         }
@@ -68,6 +70,7 @@ public class NetworkInitializer : NetworkManager {
 
     // 사용자 정보 가져오기
     private bool GetUserInfomation() {
+        _loadingGauge = 0.7f;
         return true;
     }
 
@@ -99,8 +102,6 @@ public class NetworkInitializer : NetworkManager {
     public short GetPlayerControlId() { return _playerControllerId; }
 
     public void PlayerSpawn() {
-        Debug.Log(_playerControllerId);
-        ClientScene.AddPlayer(client.connection, _playerControllerId);
-     //   ClientScene.AddPlayer(client.connection, _playerControllerId);
+        ClientScene.AddPlayer(0);
     }
 }
