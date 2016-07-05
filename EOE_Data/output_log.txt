@@ -14,32 +14,29 @@ Platform assembly: E:\Project\CICGames\EAT-OR-EATEN\EOE_Data\Managed\UnityEngine
 Loading E:\Project\CICGames\EAT-OR-EATEN\EOE_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
 Platform assembly: E:\Project\CICGames\EAT-OR-EATEN\EOE_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
 Loading E:\Project\CICGames\EAT-OR-EATEN\EOE_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-Platform assembly: E:\Project\CICGames\EAT-OR-EATEN\EOE_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading E:\Project\CICGames\EAT-OR-EATEN\EOE_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-Platform assembly: E:\Project\CICGames\EAT-OR-EATEN\EOE_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading E:\Project\CICGames\EAT-OR-EATEN\EOE_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-- Completed reload, in  0.113 seconds
+- Completed reload, in  0.062 seconds
 Platform assembly: E:\Project\CICGames\EAT-OR-EATEN\EOE_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: E:\Project\CICGames\EAT-OR-EATEN\EOE_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 2.124638 ms
+UnloadTime: 0.560988 ms
 The prefab 'Player' has multiple NetworkIdentity components. There can only be one NetworkIdentity on a prefab, and it must be on the root object.
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
 
-Setting up 2 worker threads for Enlighten.
-  Thread -> id: 3ee0 -> priority: 1 
-  Thread -> id: 34b0 -> priority: 1 
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 8.707936 ms
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: a00 -> priority: 1 
+  Thread -> id: 9f0 -> priority: 1 
+UnloadTime: 4.703215 ms
 The prefab 'Player' has multiple NetworkIdentity components. There can only be one NetworkIdentity on a prefab, and it must be on the root object.
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
 
 
 Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 340.
-Total: 0.650665 ms (FindLiveObjects: 0.051357 ms CreateObjectMapping: 0.020938 ms MarkObjects: 0.368196 ms  DeleteObjects: 0.209382 ms)
+Total: 0.539654 ms (FindLiveObjects: 0.045827 ms CreateObjectMapping: 0.016987 ms MarkObjects: 0.303012 ms  DeleteObjects: 0.173432 ms)
 
+Log: connection {1} has been disconnected by timeout; address {::ffff:192.168.0.4:58271}
