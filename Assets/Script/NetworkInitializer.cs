@@ -12,7 +12,7 @@ public class NetworkInitializer : NetworkManager {
         NetworkManager.singleton.networkAddress = GlobalData.SERVER_IP;
         NetworkManager.singleton.networkPort = GlobalData.PORT;
         
-        if (!IsServer()) { // 서버이면 서버 오픈
+        if (IsServer()) { // 서버이면 서버 오픈
             OpenServer();
         } else {
             ConnectToServer();
@@ -23,8 +23,7 @@ public class NetworkInitializer : NetworkManager {
 
     public override void OnClientConnect(NetworkConnection _conn) {
         _loadingGauge = 1f;
-
-        if (SceneManager.GetActiveScene().name.Equals(GlobalData.INTRO_SCENE))
+        //if (SceneManager.GetActiveScene().name.Equals(GlobalData.INTRO_SCENE))
             ServerChangeScene(GlobalData.MAIN_SCENE);
     }
 
@@ -88,11 +87,10 @@ public class NetworkInitializer : NetworkManager {
     public override void OnServerAddPlayer(NetworkConnection conn, short playerControllerId) {
         //  base.OnServerAddPlayer(conn, playerControllerId);
 
+        
         // 플레이어 케릭터 정보 가져온 후 여기서 추가하자.
         this._playerControllerId = playerControllerId;
-
         GameObject player = (GameObject)Instantiate(playerPrefab, Vector3.zero, Quaternion.identity);
-
         NetworkServer.AddPlayerForConnection(conn, player, playerControllerId);
     }
 
