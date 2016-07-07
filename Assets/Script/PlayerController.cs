@@ -4,38 +4,50 @@ using UnityEngine.Networking;
 using UnityEngine.EventSystems;
 using System;
 
-public class PlayerController : Character{
+public class PlayerController : Character {
 
     public GameObject _playerCamera;
-    //public GameObject _defaultAttack;
+
     public float _defaultMoveSpeed;
 
-    [SerializeField] GameObject _aiming;
+    //기본공격 오브젝트 갖고오기.
+    public GameObject _defaultattack;
 
-    bool _cannonState = false;
+    //나중에 스킬 추가하면 여기다가 넣어주기
+    //public GameObject _skill1;
+    //public GameObject _skill2;
+    //public GameObject _skill3;
+
+    //기본공격 컴포넌트 저장할 곳
+    ISkill _Idefaultattack;
+
+    //공속
     float _nextAttackRate = 0.0f;
 
-    //기본공격
-    GameObject _skillDefault;
-
-    //스킬 3개 선택 했을 시 Start에서 넣어줘야함.
-    GameObject _skill_1;
-    GameObject _skill_2;
-    GameObject _skill_3;
-
-    [SerializeField] private Rigidbody _myRigidbody;
-    [SerializeField] MeshCollider _meshCollider;
+    [SerializeField]
+    Transform _aiming;
+    [SerializeField]
+    private Rigidbody _myRigidbody;
+    [SerializeField]
+    MeshCollider _meshCollider;
 
     // Use this for initialization
     void Start() {
+        if (NetworkServer.active)
+            Debug.Log("Actived");
+        else
+            Debug.Log("DeActived");
+
         if (isLocalPlayer) {
             _playerCamera = Instantiate<GameObject>(_playerCamera);
             _playerCamera.GetComponent<CameraController>().SetPlayer(transform);
             _playerCamera.GetComponent<AudioListener>().enabled = true;
-        }
 
-        _skillDefault = _skill_Default_Level1;
-        //_aiming = transform.GetChild(0).GetChild(0).gameObject;
+            //컴포넌트 갖고오기
+            _Idefaultattack = _defaultattack.GetComponent<SphereSkillDefault>();
+            //초기화 해줘서 Charactor를 넣어줌(값 공유목적).
+            _Idefaultattack.initiate(this);
+        }
     }
 
     void OnDestroy() {
@@ -63,37 +75,24 @@ public class PlayerController : Character{
 
 
         //항상 마우스를 조준함
-        Vector3 _mouseWorld = ClickPoint(Input.mousePosition,_playerCamera);
+        Vector3 _mouseWorld = ClickPoint(Input.mousePosition, _playerCamera);
+
         //마우스 클릭 좌표와 플레이어 좌표의 Y축을 동일하게 정해줌.
         _mouseWorld.y = transform.position.y;
         _aiming.transform.LookAt(_mouseWorld);
-        
-        //_aiming.transform.rotation = Quaternion.Euler(new Vector3(0f, _aiming.transform.rotation.y, 0f));
+
         //  Debug.Log("Player: " + transform.position + ", Mouse: " + _mouseWorld + "Input: " + Input.mousePosition);
 
         if (Input.GetMouseButton(0)) {
-            LoadCannon();
 
             //공격속도
             if (Time.time > _nextAttackRate) {
                 _nextAttackRate = Time.time + _attackSpeed;
-                _cannonState = true;
-                CmdAtack();
-                //CmdDefaultAttack(_skillDefault);
+                if (NetworkServer.active)
+                    _Idefaultattack.CmdAttack();
             }
         } else {
-            UnloadCannon();
+
         }
-
-
-            //Attack(_mouseWorld,_defaultAttack);
-    }
-
-    [Command]
-    private void CmdAtack() {
-        GameObject bullet = (GameObject)Instantiate(_skillDefault, _skill_Default_Spawn.position, _skill_Default_Spawn.rotation);
-        bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 6.0f;
-        NetworkServer.Spawn(bullet);
-        Destroy(bullet, 2);
     }
 }
