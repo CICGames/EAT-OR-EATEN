@@ -10,7 +10,7 @@ public class PlayerController : Character{
     //public GameObject _defaultAttack;
     public float _defaultMoveSpeed;
 
-    GameObject _aiming;
+    [SerializeField] GameObject _aiming;
 
     bool _cannonState = false;
     float _nextAttackRate = 0.0f;
@@ -35,7 +35,7 @@ public class PlayerController : Character{
         }
 
         _skillDefault = _skill_Default_Level1;
-        _aiming = transform.GetChild(0).GetChild(0).gameObject;
+        //_aiming = transform.GetChild(0).GetChild(0).gameObject;
     }
 
     void OnDestroy() {
@@ -67,7 +67,8 @@ public class PlayerController : Character{
         //마우스 클릭 좌표와 플레이어 좌표의 Y축을 동일하게 정해줌.
         _mouseWorld.y = transform.position.y;
         _aiming.transform.LookAt(_mouseWorld);
-
+        
+        //_aiming.transform.rotation = Quaternion.Euler(new Vector3(0f, _aiming.transform.rotation.y, 0f));
         //  Debug.Log("Player: " + transform.position + ", Mouse: " + _mouseWorld + "Input: " + Input.mousePosition);
 
         if (Input.GetMouseButton(0)) {
