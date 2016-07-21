@@ -10,7 +10,4 @@ public interface ISkill {
 
     [Command]
     bool CmdMotion();
-
-    GameObject CmdtestClient();
-    void Cmdtest();
 }

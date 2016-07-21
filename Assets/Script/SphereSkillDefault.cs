@@ -15,8 +15,6 @@ public class SphereSkillDefault : NetworkBehaviour, ISkill {
     //찾아보니 public변수에 유니티에서 객체를 넣어줄때부터 객체 생성이 되는듯..?
     public void initiate(PlayerController _character) {
         this.character = _character;
-        testt = _character.testt;
-        _skill_Default_Spawn = _character._skill_Default_Spawn;
     }
 
     //void Update() {
@@ -48,35 +46,5 @@ public class SphereSkillDefault : NetworkBehaviour, ISkill {
     //모션
     public bool CmdMotion() {
         return true;
-    }
-
-    GameObject testt;
-    Transform _skill_Default_Spawn;
-
-    [Command]
-    public void Cmdtest() {
-        Debug.Log(NetworkServer.active);
-        GameObject bullet = (GameObject)Instantiate(testt, _skill_Default_Spawn.position, _skill_Default_Spawn.rotation);
-        bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 6.0f;
-        ClientScene.RegisterPrefab(bullet);
-        NetworkServer.Spawn(bullet);
-        Destroy(bullet, 2);
-    }
-
-    
-    public GameObject CmdtestClient() {
-        Debug.Log(NetworkServer.active);
-        GameObject bullet = (GameObject)Instantiate(testt, _skill_Default_Spawn.position, _skill_Default_Spawn.rotation);
-        bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 6.0f;
-        character._skill = bullet;
-        return bullet;
-
-        //if (isLocalPlayer) {
-        //    Debug.Log("Test");
-        //    Debug.Log(NetworkServer.active);
-        //    Debug.Log(NetworkClient.active);
-        //    Debug.Log("TestEnd");
-        //}
-        //Cmdtest();
     }
 }

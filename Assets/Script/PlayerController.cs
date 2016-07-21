@@ -11,9 +11,8 @@ public class PlayerController : Character {
     public float _defaultMoveSpeed;
     
     //기본공격 컴포넌트 저장할 곳
-    public ISkill _Idefaultattack;
-    [SyncVar]
-    public GameObject _skill;
+    ISkill _Idefaultattack;
+    public GameObject _attackObject;
 
     //공속
     float _nextAttackRate = 0.0f;
@@ -45,7 +44,8 @@ public class PlayerController : Character {
             //_Idefaultattack.initiate(this);
         }
 
-        _Idefaultattack = new SphereSkillDefault();
+        _attackObject = Instantiate<GameObject>(_attackObject);
+        _Idefaultattack = _attackObject.GetComponent<SphereSkillDefault>();
         _Idefaultattack.initiate(this);
     }
 
@@ -87,43 +87,15 @@ public class PlayerController : Character {
             //공격속도
             if (Time.time > _nextAttackRate) {
                 _nextAttackRate = Time.time + _attackSpeed;
-                //_Idefaultattack.initiate(this);
-                //_Idefaultattack.CmdTTTEST();
-                //_Idefaultattack.CmdAttack();
-                //Cmdtest();
-                //_Idefaultattack.Cmdtest();
-                //Cmdtest();
-                //_Idefaultattack.CmdtestClient();
-                CmdAttt();
+                CmdAtack();
             }
         } else {
 
         }
     }
-
-    
-
-    public GameObject testt;
-    [Command]
-    public void Cmdtest() {
-        Debug.Log(NetworkServer.active);
-        GameObject bullet = (GameObject)Instantiate(testt, _skill_Default_Spawn.position, _skill_Default_Spawn.rotation);
-        bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 6.0f;
-        ClientScene.RegisterPrefab(bullet);
-        NetworkServer.Spawn(bullet);
-        Destroy(bullet, 2);
-    }
     
     [Command]
-    public void CmdAttt() {
-        //ClientScene.RegisterPrefab(bullet);
-        //GameObject bullet = (GameObject)Instantiate(testt, _skill_Default_Spawn.position, _skill_Default_Spawn.rotation);
-        //bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 6.0f;
-        //NetworkServer.Spawn(bullet);
-        //Destroy(bullet, 2);
-        GameObject _skill = _Idefaultattack.CmdtestClient();
-        ClientScene.RegisterPrefab(_skill);
-        NetworkServer.Spawn(_skill);
-        Destroy(_skill, 2);
+    public void CmdAtack() {
+        _Idefaultattack.CmdAttack();
     }
 }

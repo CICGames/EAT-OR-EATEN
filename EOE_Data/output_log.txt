@@ -14,36 +14,36 @@ Platform assembly: E:\Project\CICGames\EAT-OR-EATEN\EOE_Data\Managed\UnityEngine
 Loading E:\Project\CICGames\EAT-OR-EATEN\EOE_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
 Platform assembly: E:\Project\CICGames\EAT-OR-EATEN\EOE_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
 Loading E:\Project\CICGames\EAT-OR-EATEN\EOE_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-- Completed reload, in  0.120 seconds
+- Completed reload, in  0.077 seconds
 Platform assembly: E:\Project\CICGames\EAT-OR-EATEN\EOE_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: E:\Project\CICGames\EAT-OR-EATEN\EOE_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 4000x1355 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 0.730468 ms
+UnloadTime: 1.004641 ms
 The prefab 'Player' has multiple NetworkIdentity components. There can only be one NetworkIdentity on a prefab, and it must be on the root object.
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
 
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 3524 -> priority: 1 
-  Thread -> id: 17b0 -> priority: 1 
+  Thread -> id: 2a74 -> priority: 1 
+  Thread -> id: 3aec -> priority: 1 
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 7.623503 ms
+UnloadTime: 5.229430 ms
 
 Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 368.
-Total: 0.648691 ms (FindLiveObjects: 0.119703 ms CreateObjectMapping: 0.030024 ms MarkObjects: 0.354765 ms  DeleteObjects: 0.144197 ms)
+Total: 0.818172 ms (FindLiveObjects: 0.054123 ms CreateObjectMapping: 0.035950 ms MarkObjects: 0.504493 ms  DeleteObjects: 0.223604 ms)
 
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.525727 ms
+UnloadTime: 1.282369 ms
 The prefab 'Player' has multiple NetworkIdentity components. There can only be one NetworkIdentity on a prefab, and it must be on the root object.
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
 
 
 Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 368.
-Total: 0.671999 ms (FindLiveObjects: 0.042271 ms CreateObjectMapping: 0.028839 ms MarkObjects: 0.454715 ms  DeleteObjects: 0.145777 ms)
+Total: 0.464592 ms (FindLiveObjects: 0.018172 ms CreateObjectMapping: 0.013432 ms MarkObjects: 0.285234 ms  DeleteObjects: 0.147357 ms)
 
 DeActived
  
