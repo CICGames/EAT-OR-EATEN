@@ -14,29 +14,46 @@ Platform assembly: E:\Project\CICGames\EAT-OR-EATEN\EOE_Data\Managed\UnityEngine
 Loading E:\Project\CICGames\EAT-OR-EATEN\EOE_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
 Platform assembly: E:\Project\CICGames\EAT-OR-EATEN\EOE_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
 Loading E:\Project\CICGames\EAT-OR-EATEN\EOE_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-- Completed reload, in  0.064 seconds
+- Completed reload, in  0.120 seconds
 Platform assembly: E:\Project\CICGames\EAT-OR-EATEN\EOE_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: E:\Project\CICGames\EAT-OR-EATEN\EOE_Data\Managed\System.dll (this message is harmless)
-desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+desktop: 1920x1080 60Hz; virtual: 4000x1355 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 0.517924 ms
+UnloadTime: 0.730468 ms
 The prefab 'Player' has multiple NetworkIdentity components. There can only be one NetworkIdentity on a prefab, and it must be on the root object.
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
 
-Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 1910 -> priority: 1 
-  Thread -> id: 2880 -> priority: 1 
-UnloadTime: 4.122856 ms
+  Thread -> id: 3524 -> priority: 1 
+  Thread -> id: 17b0 -> priority: 1 
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 7.623503 ms
+
+Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 368.
+Total: 0.648691 ms (FindLiveObjects: 0.119703 ms CreateObjectMapping: 0.030024 ms MarkObjects: 0.354765 ms  DeleteObjects: 0.144197 ms)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.525727 ms
 The prefab 'Player' has multiple NetworkIdentity components. There can only be one NetworkIdentity on a prefab, and it must be on the root object.
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
 
 
-Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 340.
-Total: 0.830023 ms (FindLiveObjects: 0.023703 ms CreateObjectMapping: 0.012641 ms MarkObjects: 0.537282 ms  DeleteObjects: 0.255999 ms)
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 368.
+Total: 0.671999 ms (FindLiveObjects: 0.042271 ms CreateObjectMapping: 0.028839 ms MarkObjects: 0.454715 ms  DeleteObjects: 0.145777 ms)
 
-Log: connection {1} has been disconnected by timeout; address {::ffff:192.168.0.9:55452}
+DeActived
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+ttFalse
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+DeActived
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+

@@ -1,10 +1,14 @@
 fileFormatVersion: 2
 guid: e8be0a16148f57e47ab3db7e484219f5
-timeCreated: 1467724206
+timeCreated: 1468929425
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - _skill_Default_Level1: {fileID: 194888, guid: 1973db5f9541c0e488cc993db1001572,
+      type: 2}
+  - _skill_Default_Cannon: {fileID: 145078, guid: 2abcb6931ab2a5f498811b4295e78f91,
+      type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

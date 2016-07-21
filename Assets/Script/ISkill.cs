@@ -4,7 +4,13 @@ using UnityEngine.Networking;
 
 
 public interface ISkill {
-    void initiate(Character _charatcter);
+    void initiate(PlayerController _charatcter);
+    [Command]
     void CmdAttack();
+
+    [Command]
     bool CmdMotion();
+
+    GameObject CmdtestClient();
+    void Cmdtest();
 }

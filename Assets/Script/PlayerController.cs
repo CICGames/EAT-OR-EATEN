@@ -9,17 +9,11 @@ public class PlayerController : Character {
     public GameObject _playerCamera;
 
     public float _defaultMoveSpeed;
-
-    //기본공격 오브젝트 갖고오기.
-    public GameObject _defaultattack;
-
-    //나중에 스킬 추가하면 여기다가 넣어주기
-    //public GameObject _skill1;
-    //public GameObject _skill2;
-    //public GameObject _skill3;
-
+    
     //기본공격 컴포넌트 저장할 곳
-    ISkill _Idefaultattack;
+    public ISkill _Idefaultattack;
+    [SyncVar]
+    public GameObject _skill;
 
     //공속
     float _nextAttackRate = 0.0f;
@@ -42,12 +36,17 @@ public class PlayerController : Character {
             _playerCamera = Instantiate<GameObject>(_playerCamera);
             _playerCamera.GetComponent<CameraController>().SetPlayer(transform);
             _playerCamera.GetComponent<AudioListener>().enabled = true;
-
+            //_defaultattack = Instantiate<GameObject>(_defaultattack);
             //컴포넌트 갖고오기
-            _Idefaultattack = _defaultattack.GetComponent<SphereSkillDefault>();
+            //_Idefaultattack = _defaultattack.GetComponent<SphereSkillDefault>();
+           
+
             //초기화 해줘서 Charactor를 넣어줌(값 공유목적).
-            _Idefaultattack.initiate(this);
+            //_Idefaultattack.initiate(this);
         }
+
+        _Idefaultattack = new SphereSkillDefault();
+        _Idefaultattack.initiate(this);
     }
 
     void OnDestroy() {
@@ -88,11 +87,43 @@ public class PlayerController : Character {
             //공격속도
             if (Time.time > _nextAttackRate) {
                 _nextAttackRate = Time.time + _attackSpeed;
-                if (NetworkServer.active)
-                    _Idefaultattack.CmdAttack();
+                //_Idefaultattack.initiate(this);
+                //_Idefaultattack.CmdTTTEST();
+                //_Idefaultattack.CmdAttack();
+                //Cmdtest();
+                //_Idefaultattack.Cmdtest();
+                //Cmdtest();
+                //_Idefaultattack.CmdtestClient();
+                CmdAttt();
             }
         } else {
 
         }
+    }
+
+    
+
+    public GameObject testt;
+    [Command]
+    public void Cmdtest() {
+        Debug.Log(NetworkServer.active);
+        GameObject bullet = (GameObject)Instantiate(testt, _skill_Default_Spawn.position, _skill_Default_Spawn.rotation);
+        bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 6.0f;
+        ClientScene.RegisterPrefab(bullet);
+        NetworkServer.Spawn(bullet);
+        Destroy(bullet, 2);
+    }
+    
+    [Command]
+    public void CmdAttt() {
+        //ClientScene.RegisterPrefab(bullet);
+        //GameObject bullet = (GameObject)Instantiate(testt, _skill_Default_Spawn.position, _skill_Default_Spawn.rotation);
+        //bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 6.0f;
+        //NetworkServer.Spawn(bullet);
+        //Destroy(bullet, 2);
+        GameObject _skill = _Idefaultattack.CmdtestClient();
+        ClientScene.RegisterPrefab(_skill);
+        NetworkServer.Spawn(_skill);
+        Destroy(_skill, 2);
     }
 }

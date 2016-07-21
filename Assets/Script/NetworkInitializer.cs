@@ -25,6 +25,7 @@ public class NetworkInitializer : NetworkManager {
         _loadingGauge = 1f;
         //if (SceneManager.GetActiveScene().name.Equals(GlobalData.INTRO_SCENE))
             ServerChangeScene(GlobalData.MAIN_SCENE);
+        
     }
 
     // 클라이언트의 연결이 끊겼을 경우 발생
@@ -100,6 +101,7 @@ public class NetworkInitializer : NetworkManager {
     public short GetPlayerControlId() { return _playerControllerId; }
 
     public void PlayerSpawn() {
+        Debug.Log("tt" + NetworkServer.active);
         ClientScene.AddPlayer(0);
     }
 }
