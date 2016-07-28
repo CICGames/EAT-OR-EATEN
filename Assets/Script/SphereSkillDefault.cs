@@ -16,26 +16,10 @@ public class SphereSkillDefault : NetworkBehaviour, ISkill {
     public void initiate(PlayerController _character) {
         this.character = _character;
     }
-
-    //void Update() {
-    //    Debug.Log("123");
-    //    CmdAttack();
-    //}
-
-    [SyncVar]
-    bool isShoot = false;
-    void Update() {
-        if (isShoot) {
-            Debug.Log("before2");
-            CmdAttack();
-        }
-    }
     
     //기본 공격 함수
     [Command]
     public void CmdAttack() {
-        Debug.Log("Server " + NetworkServer.active);
-        Debug.Log("Client " + NetworkClient.active);
         GameObject bullet = (GameObject)Instantiate(_skill_Default_Level1, character._skill_Default_Spawn.position, character._skill_Default_Spawn.rotation);
         bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 6.0f;
         //ClientScene.RegisterPrefab(bullet);

@@ -1,15 +1,15 @@
 ﻿using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.UI;
 
 public class Character : NetworkBehaviour {
 
-    //발사 위치!
-    public Transform _skill_Default_Spawn;
+    public RectTransform _healthbar;
 
     protected float _attackSpeed = 0.5f;
 
-    protected int _maxHealth = 100;
-    protected int _currentHealth = 100;
+    protected float _maxHealth = 100;
+    [SyncVar(hook = "OnChangeHealth")] protected float _currentHealth = 100;
 
     //Get mouse click point
     protected Vector3 ClickPoint(Vector3 _mousePosition, GameObject _playerCamera) {
@@ -25,13 +25,21 @@ public class Character : NetworkBehaviour {
     }
 
     //데미지 입는부분
-    protected void TakeDamage(int amout) {
+    public void TakeDamage(int amout) {
+        if (!isServer)
+            return;
+
         _currentHealth -= amout;
 
         if (_currentHealth <= 0) {
             _currentHealth = 0;
             Debug.Log("you are dead !");
         }
+
+    }
+
+    void OnChangeHealth(float health) {
+        _healthbar.GetComponent<Image>().fillAmount = health / _maxHealth;
     }
 
     //대포 앞으로 움직임.
@@ -47,9 +55,4 @@ public class Character : NetworkBehaviour {
     //      _skill_Default_Cannon.GetComponent<MeshRenderer>().enabled = false;
     //}
 
-    //원래 있던 파랑스킬 공격함수. 일단 놔둠
-    protected void Attack(Vector3 _attackPoint, GameObject _defaultAttack) {
-        GameObject _at = Instantiate<GameObject>(_defaultAttack);
-        _at.GetComponent<SkillDefaultLevel1>().SetAttackPoint(transform.position, _attackPoint);
-    }
 }

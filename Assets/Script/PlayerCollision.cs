@@ -43,4 +43,8 @@ public class PlayerCollision : MonoBehaviour {
             _feeds.Add(_other.gameObject);
         }
     }
+
+    void On() {
+
+    }
 }

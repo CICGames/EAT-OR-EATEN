@@ -3,8 +3,12 @@ using System.Collections;
 using UnityEngine.Networking;
 using UnityEngine.EventSystems;
 using System;
+using UnityEngine.UI;
 
 public class PlayerController : Character {
+
+    //발사 위치!
+    public Transform _skill_Default_Spawn;
 
     public GameObject _playerCamera;
 
@@ -13,7 +17,7 @@ public class PlayerController : Character {
     //기본공격 컴포넌트 저장할 곳
     ISkill _Idefaultattack;
     public GameObject _attackObject;
-
+    
     //공속
     float _nextAttackRate = 0.0f;
 
@@ -38,13 +42,16 @@ public class PlayerController : Character {
             //_defaultattack = Instantiate<GameObject>(_defaultattack);
             //컴포넌트 갖고오기
             //_Idefaultattack = _defaultattack.GetComponent<SphereSkillDefault>();
-           
+
 
             //초기화 해줘서 Charactor를 넣어줌(값 공유목적).
             //_Idefaultattack.initiate(this);
+
+
+            _attackObject = Instantiate<GameObject>(_attackObject);
         }
 
-        _attackObject = Instantiate<GameObject>(_attackObject);
+        _healthbar.GetComponent<Image>().fillAmount = _currentHealth / _maxHealth;
         _Idefaultattack = _attackObject.GetComponent<SphereSkillDefault>();
         _Idefaultattack.initiate(this);
     }

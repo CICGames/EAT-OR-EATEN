@@ -101,7 +101,6 @@ public class NetworkInitializer : NetworkManager {
     public short GetPlayerControlId() { return _playerControllerId; }
 
     public void PlayerSpawn() {
-        Debug.Log("tt" + NetworkServer.active);
         ClientScene.AddPlayer(0);
     }
 }
