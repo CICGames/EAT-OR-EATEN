@@ -6,6 +6,9 @@ public class Character : NetworkBehaviour {
 
     public RectTransform _healthbar;
 
+    public GameObject _debris;
+
+    
     //protected float _attackSpeed = 0.5f;
 
     // 케릭터 스텟
@@ -49,7 +52,7 @@ public class Character : NetworkBehaviour {
 
         if (_currentHealth <= 0) {
             _currentHealth = 0;
-            Debug.Log("you are dead !");
+            DeathMotion();
         }
 
     }
@@ -64,17 +67,19 @@ public class Character : NetworkBehaviour {
 
     public float GetAttackSpeed() { return _attackSpeed; }
     public float GetMoveSpeed() { return _moveSpeed; }
-    //대포 앞으로 움직임.
 
-    //protected void LoadCannon() {
-    //    _skill_Default_Cannon.GetComponent<MeshRenderer>().enabled = true;
-    //    _skill_Default_Cannon.transform.localPosition = Vector3.Lerp(_skill_Default_Cannon.transform.localPosition, new Vector3(0,0,1), Time.deltaTime * 13f);
-    //}
 
-    //protected void UnloadCannon() {
-    //    _skill_Default_Cannon.transform.localPosition = Vector3.Lerp(_skill_Default_Cannon.transform.localPosition, new Vector3(0, 0, 0), Time.deltaTime * 10f);
-    //    if(_skill_Default_Cannon.transform.localPosition.z == 0)
-    //      _skill_Default_Cannon.GetComponent<MeshRenderer>().enabled = false;
-    //}
+    protected void DeathMotion() {
+        float x = transform.position.x;
+        float y = transform.position.y;
+        float z = transform.position.z;
+        for (int i = 0; i < 30; i++) {
+            Vector3 v = new Vector3(x + Random.Range(-0.1f, 0.1f), y + Random.Range(0, 0.1f), z + Random.Range(-0.1f, 0.1f));
+            GameObject gameobject = (GameObject)Instantiate(_debris, v, Quaternion.identity);
+            gameobject.GetComponent<Rigidbody>().velocity = new Vector3(0, 5, 0);
+            NetworkServer.Spawn(gameobject);
+        }
+        Destroy(gameObject);
+    }
 
 }
