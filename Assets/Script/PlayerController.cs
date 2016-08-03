@@ -11,8 +11,6 @@ public class PlayerController : Character {
     public Transform _skill_Default_Spawn;
 
     public GameObject _playerCamera;
-
-    public float _defaultMoveSpeed;
     
     //기본공격 컴포넌트 저장할 곳
     ISkill _Idefaultattack;
@@ -51,7 +49,8 @@ public class PlayerController : Character {
             _attackObject = Instantiate<GameObject>(_attackObject);
         }
 
-        _healthbar.GetComponent<Image>().fillAmount = _currentHealth / _maxHealth;
+        //_healthbar.GetComponent<Image>().fillAmount = _currentHealth / _maxHealth;
+        InitHealth();
         _Idefaultattack = _attackObject.GetComponent<SphereSkillDefault>();
         _Idefaultattack.initiate(this);
     }
@@ -68,7 +67,7 @@ public class PlayerController : Character {
             return;
         }
 
-        float moveSpeed = _defaultMoveSpeed;
+        float moveSpeed = GetMoveSpeed();
 
         if (Input.GetKey(KeyCode.W))
             _myRigidbody.AddForce(Vector3.forward * Time.deltaTime * moveSpeed);
@@ -93,7 +92,7 @@ public class PlayerController : Character {
 
             //공격속도
             if (Time.time > _nextAttackRate) {
-                _nextAttackRate = Time.time + _attackSpeed;
+                _nextAttackRate = Time.time + GetAttackSpeed();
                 CmdAtack();
             }
         } else {

@@ -6,10 +6,26 @@ public class Character : NetworkBehaviour {
 
     public RectTransform _healthbar;
 
-    protected float _attackSpeed = 0.5f;
+    //protected float _attackSpeed = 0.5f;
 
-    protected float _maxHealth = 100;
-    [SyncVar(hook = "OnChangeHealth")] protected float _currentHealth = 100;
+    // 케릭터 스텟
+    private float _strength;
+    private float _physical;
+    private float _dex;
+    private float _luc;
+
+    // 케릭터 능력치
+    private float _attackPower = 20f;
+    private float _attackSpeed = 1f; 
+    private float _defensePower = 100f;
+    private float _moveSpeed = 15;
+    private float _maxHealth = 100f;
+    [SyncVar(hook = "OnChangeHealth")] private float _currentHealth = 100f;
+    private float _recoveryRate = 1f; // %
+    private float _criticalRate = 0.01f; // %
+    private float _criticalPower = 0.2f; // %
+    private float _evasionRate = 0.01f; // %
+
 
     //Get mouse click point
     protected Vector3 ClickPoint(Vector3 _mousePosition, GameObject _playerCamera) {
@@ -42,6 +58,12 @@ public class Character : NetworkBehaviour {
         _healthbar.GetComponent<Image>().fillAmount = health / _maxHealth;
     }
 
+    public void InitHealth() {
+        _healthbar.GetComponent<Image>().fillAmount = _currentHealth / _maxHealth;
+    }
+
+    public float GetAttackSpeed() { return _attackSpeed; }
+    public float GetMoveSpeed() { return _moveSpeed; }
     //대포 앞으로 움직임.
 
     //protected void LoadCannon() {

@@ -14,28 +14,28 @@ Platform assembly: E:\Project\CICGames\EAT-OR-EATEN\EOE_Data\Managed\UnityEngine
 Loading E:\Project\CICGames\EAT-OR-EATEN\EOE_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
 Platform assembly: E:\Project\CICGames\EAT-OR-EATEN\EOE_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
 Loading E:\Project\CICGames\EAT-OR-EATEN\EOE_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-- Completed reload, in  0.123 seconds
+- Completed reload, in  0.086 seconds
 Platform assembly: E:\Project\CICGames\EAT-OR-EATEN\EOE_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: E:\Project\CICGames\EAT-OR-EATEN\EOE_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 1.274072 ms
+UnloadTime: 0.826469 ms
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: cc -> priority: 1 
-  Thread -> id: 31d0 -> priority: 1 
+  Thread -> id: b8 -> priority: 1 
+  Thread -> id: 3b34 -> priority: 1 
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 5.055201 ms
+UnloadTime: 5.560493 ms
 
 Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 368.
-Total: 0.760887 ms (FindLiveObjects: 0.043456 ms CreateObjectMapping: 0.022518 ms MarkObjects: 0.381233 ms  DeleteObjects: 0.313283 ms)
+Total: 0.721777 ms (FindLiveObjects: 0.043456 ms CreateObjectMapping: 0.029234 ms MarkObjects: 0.457876 ms  DeleteObjects: 0.190024 ms)
 
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.731552 ms
+UnloadTime: 1.205728 ms
 
 Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 368.
-Total: 0.461826 ms (FindLiveObjects: 0.019753 ms CreateObjectMapping: 0.014617 ms MarkObjects: 0.282468 ms  DeleteObjects: 0.144592 ms)
+Total: 0.612740 ms (FindLiveObjects: 0.024888 ms CreateObjectMapping: 0.014617 ms MarkObjects: 0.402567 ms  DeleteObjects: 0.170271 ms)
 
 DeActived
  
