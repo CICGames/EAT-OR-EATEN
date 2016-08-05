@@ -12,7 +12,7 @@ public class NetworkInitializer : NetworkManager {
         NetworkManager.singleton.networkAddress = GlobalData.SERVER_IP;
         NetworkManager.singleton.networkPort = GlobalData.PORT;
         
-        if (!IsServer()) { // 서버이면 서버 오픈
+        if (IsServer()) { // 서버이면 서버 오픈
             OpenServer();
         } else {
             ConnectToServer();

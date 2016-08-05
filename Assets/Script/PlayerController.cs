@@ -45,7 +45,6 @@ public class PlayerController : Character {
             //초기화 해줘서 Charactor를 넣어줌(값 공유목적).
             //_Idefaultattack.initiate(this);
 
-
             _attackObject = Instantiate<GameObject>(_attackObject);
         }
 

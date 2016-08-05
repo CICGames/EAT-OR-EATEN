@@ -52,7 +52,7 @@ public class Character : NetworkBehaviour {
 
         if (_currentHealth <= 0) {
             _currentHealth = 0;
-            DeathMotion();
+            CmdDeathMotion();
         }
 
     }
@@ -68,15 +68,15 @@ public class Character : NetworkBehaviour {
     public float GetAttackSpeed() { return _attackSpeed; }
     public float GetMoveSpeed() { return _moveSpeed; }
 
-
-    protected void DeathMotion() {
+    [Command]
+    protected void CmdDeathMotion() {
         float x = transform.position.x;
         float y = transform.position.y;
         float z = transform.position.z;
         for (int i = 0; i < 30; i++) {
             Vector3 v = new Vector3(x + Random.Range(-0.1f, 0.1f), y + Random.Range(0, 0.1f), z + Random.Range(-0.1f, 0.1f));
             GameObject gameobject = (GameObject)Instantiate(_debris, v, Quaternion.identity);
-            gameobject.GetComponent<Rigidbody>().velocity = new Vector3(0, 5, 0);
+            gameobject.GetComponent<Rigidbody>().velocity = new Vector3(0, 4, 0);
             NetworkServer.Spawn(gameobject);
         }
         Destroy(gameObject);
