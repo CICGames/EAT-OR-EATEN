@@ -19,8 +19,8 @@ public class SphereSkillDefault : NetworkBehaviour, ISkill {
     
     //기본 공격 함수
     [Command]
-    public void CmdAttack() {
-        GameObject bullet = (GameObject)Instantiate(_skill_Default_Level1, character._skill_Default_Spawn.position, character._skill_Default_Spawn.rotation);
+    public void CmdAttack(Vector3 _spawnPosition, Quaternion _spawnRatation) {
+        GameObject bullet = (GameObject)Instantiate(_skill_Default_Level1, _spawnPosition, _spawnRatation);
         bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 6.0f;
         //ClientScene.RegisterPrefab(bullet);
         NetworkServer.Spawn(bullet);

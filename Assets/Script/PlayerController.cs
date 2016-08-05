@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class PlayerController : Character {
 
     //발사 위치!
-    public Transform _skill_Default_Spawn;
+    public Transform _skill_Spawn_Point;
 
     public GameObject _playerCamera;
     
@@ -83,6 +83,7 @@ public class PlayerController : Character {
 
         //마우스 클릭 좌표와 플레이어 좌표의 Y축을 동일하게 정해줌.
         _mouseWorld.y = transform.position.y;
+        //_aiming.transform.rotation = Quaternion.Euler(Vector3.zero);
         _aiming.transform.LookAt(_mouseWorld);
 
         //  Debug.Log("Player: " + transform.position + ", Mouse: " + _mouseWorld + "Input: " + Input.mousePosition);
@@ -92,7 +93,7 @@ public class PlayerController : Character {
             //공격속도
             if (Time.time > _nextAttackRate) {
                 _nextAttackRate = Time.time + GetAttackSpeed();
-                CmdAtack();
+                CmdAtack(_skill_Spawn_Point.position, _skill_Spawn_Point.rotation);
             }
         } else {
 
@@ -100,7 +101,7 @@ public class PlayerController : Character {
     }
     
     [Command]
-    public void CmdAtack() {
-        _Idefaultattack.CmdAttack();
+    public void CmdAtack(Vector3 _spawnPosition, Quaternion _spawnRatation) {
+        _Idefaultattack.CmdAttack(_spawnPosition, _spawnRatation);
     }
 }
