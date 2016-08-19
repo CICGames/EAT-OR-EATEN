@@ -101,7 +101,7 @@ public class PlayerController : Character {
     }
     
     [Command]
-    public void CmdAtack(Vector3 _spawnPosition, Quaternion _spawnRatation) {
-        _Idefaultattack.CmdAttack(_spawnPosition, _spawnRatation);
+    public void CmdAtack(Vector3 _spawnPosition, Quaternion _spawnRotation) {
+        _Idefaultattack.CmdAttack(_spawnPosition, _spawnRotation);
     }
 }
